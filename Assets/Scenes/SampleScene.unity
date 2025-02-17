@@ -279,6 +279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045487ea5d9103842b56080e85623f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 149531941}
+  speed: 0.3
+  rotationSpeed: 5
 --- !u!212 &347020561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -715,6 +718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045487ea5d9103842b56080e85623f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 149531941}
+  speed: 0.3
+  rotationSpeed: 5
 --- !u!212 &949686933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -795,7 +801,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 949686931}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
@@ -1017,6 +1023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045487ea5d9103842b56080e85623f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 149531941}
+  speed: 0.3
+  rotationSpeed: 5
 --- !u!212 &1685599985
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1097,7 +1106,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1685599983}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
