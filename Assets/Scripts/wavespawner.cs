@@ -5,6 +5,7 @@ using UnityEngine;
 public class wave
 {
     public GameObject[] enemyList;
+    public int enemyIndex = 0;
 
     public float enemyInterval;
     public float spawnInterval;
@@ -19,7 +20,7 @@ public class wavespawner : MonoBehaviour
     private wave curwave;
     private int wavenum;
 
-    private float nextWave;
+    private float nextWave = 0f;
     private float nextEnemy;
 
     private bool canSpawn = true;
@@ -29,7 +30,8 @@ public class wavespawner : MonoBehaviour
     private void Update()
     {
         curwave = waves[wavenum];
-        for (int i = 0; i < waves.Length - 1; i++)
+
+        if (Time.time > nextWave && wavenum <= waves.Length - 1)
         {
             spawnWave();         
         }
@@ -37,15 +39,11 @@ public class wavespawner : MonoBehaviour
 
     private void spawnWave()
     {
-        if (canSpawn && nextWave < Time.time)
-        {
-        
+        if (canSpawn && nextEnemy < Time.time)
+        {      
             spawnEnemy();
-            nextEnemy = Time.time + curwave.enemyInterval;
-
-            canSpawn = false;
         }
-        else if (!canSpawn && wavenum < waves.Length - 1)
+        else if (!canSpawn)
         {
             nextWave = Time.time + curwave.spawnInterval;
             wavenum++;
@@ -56,18 +54,16 @@ public class wavespawner : MonoBehaviour
 
     private void spawnEnemy() 
     {
+        Transform randomPoint = spawnpoints[Random.Range(0, spawnpoints.Length)];
+        Instantiate(curwave.enemyList[curwave.enemyIndex], randomPoint.position, Quaternion.identity);
+        
+        curwave.enemyIndex++;
+        nextEnemy = Time.time + curwave.enemyInterval;
 
-        for (int i = 0; i < curwave.enemyList.Length; i++)
+        if (curwave.enemyIndex == curwave.enemyList.Length)
         {
-            if (nextEnemy < Time.time)
-
-            {
-                Transform randomPoint = spawnpoints[Random.Range(0, spawnpoints.Length)];
-                Instantiate(curwave.enemyList[i], randomPoint.position, Quaternion.identity);
-                //nextEnemy = Time.time + curwave.enemyInterval;
-            }
-
+            canSpawn = false;
         }
+    }
 
-    }
-    }
+}
