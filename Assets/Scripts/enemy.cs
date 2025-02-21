@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    public Transform player;
     public float speed = 5f;
     public float rotationSpeed = 5f;
+
+    private Transform player;
     private Vector2 direction;
     private float angle;
     private Rigidbody2D rb2d;
@@ -12,6 +13,7 @@ public class enemy : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()

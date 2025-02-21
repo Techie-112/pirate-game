@@ -31,7 +31,7 @@ public class wavespawner : MonoBehaviour
     {
         curwave = waves[wavenum];
 
-        if (Time.time > nextWave && wavenum <= waves.Length - 1)
+        if (Time.time > nextWave && wavenum < waves.Length)
         {
             spawnWave();         
         }
