@@ -7,7 +7,7 @@ public class player : MonoBehaviour
 
     private SpriteRenderer cursprite;
     [SerializeField] Sprite[] sprites;
-    //0 = back 1 = right 2 = left 3 = front
+    //0 = back 1 = right 2 = front 3 = left
 
     public Camera cam;
 
