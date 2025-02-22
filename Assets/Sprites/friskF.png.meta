@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 03a07d599ab2852478e5866833db6da9
+guid: daded55f97a15e549aa3639ffca36b48
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5162997256646205289
-    second: frisk_0
+      213: -2179867051879706944
+    second: friskF_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frisk_0
+      name: friskF_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 236
-        height: 360
+        width: 189
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96f96b276a6a6a740800000000000000
-      internalID: 5162997256646205289
+      spriteID: 0cec12b377e8fb1e0800000000000000
+      internalID: -2179867051879706944
       vertices: []
       indices: 
       edges: []
