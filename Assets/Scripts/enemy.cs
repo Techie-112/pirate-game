@@ -37,16 +37,37 @@ public class enemy : MonoBehaviour
 
     private void moveEnemy()
     {
-        this.angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+        /*this.angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         //get angle between current rotation and target position
         Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         //rotate towards the target
-        this.transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed);
+        this.transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed); */
 
         //move towards the player
         this.rb2d.linearVelocity = new Vector2(direction.x * speed, direction.y * speed);
         //i kept getting a warning saying that rb2d.velocity was obsolete, so i changed it to linearVelocity -max
+
+        if (rb2d.linearVelocityX > rb2d.linearVelocityY)
+        {
+            if (rb2d.linearVelocityX >= 0)
+            {
+                // assign going right animation
+            } else
+            {
+                // assign going left animation
+            }
+        } else
+        {
+            if (rb2d.linearVelocityY >= 0)
+            {
+                // assign going up animation
+            }
+            else
+            {
+                // assign going down animation
+            }
+        }
 
     }
 }
