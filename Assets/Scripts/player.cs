@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 using System;
@@ -7,17 +8,18 @@ public class player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
+    public Camera cam;
     private SpriteRenderer cursprite;
     [SerializeField] Sprite[] sprites;
     //0 = back 1 = right 2 = front 3 = left
 
     public int maxLives = 3; // Total lives the player has
-    private int currentLives;
+    public int currentLives;
 
     public float invincibilityDuration = 1f; // Time of invincibility after getting hit
     private bool isInvincible = false;
 
-    public Camera cam;
+
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class player : MonoBehaviour
         cursprite = GetComponent<SpriteRenderer>();
 
         currentLives = maxLives;
+
     }
 
     void Update()

@@ -2,23 +2,32 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+    //the enemy's stats
     public float speed = 5f;
     public float rotationSpeed = 5f;
-
-    private Transform player;
+    public int damage = 1;
+    player player;
+    
+    //variables related to enemy movement
+    private Transform target;
     private Vector2 direction;
     private float angle;
     private Rigidbody2D rb2d;
 
+    //variables related to enemy rotation
+    private SpriteRenderer cursprite;
+    [SerializeField] Sprite[] sprites;
+    //0 = back 1 = right 2 = front 3 = left
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindWithTag("Player").transform;
+        cursprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        direction = (player.position - transform.position).normalized;
+        direction = (target.position - transform.position).normalized;
     }
 
     private void FixedUpdate()
@@ -42,6 +51,7 @@ public class enemy : MonoBehaviour
         }
 
 
+
     }
 
 
@@ -56,26 +66,30 @@ public class enemy : MonoBehaviour
 
         //move towards the player
         this.rb2d.linearVelocity = new Vector2(direction.x * speed, direction.y * speed);
-        //i kept getting a warning saying that rb2d.velocity was obsolete, so i changed it to linearVelocity -max
-
+        
+        //decide which way they are facing
         if (rb2d.linearVelocityX > rb2d.linearVelocityY)
         {
             if (rb2d.linearVelocityX >= 0)
             {
-                // assign going right animation
+                //going right
+                cursprite.sprite = sprites[1];
             } else
             {
-                // assign going left animation
+                //going left
+                cursprite.sprite = sprites[3];
             }
         } else
         {
             if (rb2d.linearVelocityY >= 0)
             {
-                // assign going up animation
+                //going up
+                cursprite.sprite = sprites[0];
             }
             else
             {
-                // assign going down animation
+                //going down
+                cursprite.sprite = sprites[2];
             }
         }
 

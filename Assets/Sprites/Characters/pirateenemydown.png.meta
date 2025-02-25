@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 427055bcb4d0bf4469cbd3f98c41e0f7
+guid: a0ac59d2dc90aa342b09be82c6e0f32d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5018833721668139141
-    second: friskR_0
+      213: 50075459684498720
+    second: pirateenemydown_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: friskR_0
+      name: pirateenemydown_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 169
-        height: 288
+        width: 775
+        height: 1001
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b7708313255895ab0800000000000000
-      internalID: -5018833721668139141
+      spriteID: 02d75728d57e1b000800000000000000
+      internalID: 50075459684498720
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      friskR_0: -5018833721668139141
+      friskB_0: 1765305483699372840
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
