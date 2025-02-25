@@ -22,7 +22,15 @@ public class bullet : MonoBehaviour
     {
         if (collision.gameObject.tag != "Ranged_enemy")
         {
+            if (collision.gameObject.tag == "Player")
+            {
+                player playerScript = collision.gameObject.GetComponent<player>();
+                playerScript.TakeDamage();
+            }
+            else
+            {
             Destroy(collision.gameObject);
+            }
         }
     }
 }

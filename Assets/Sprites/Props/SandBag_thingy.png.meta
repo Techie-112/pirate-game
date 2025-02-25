@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SandBag_thingy_0: -7143224255894002287
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

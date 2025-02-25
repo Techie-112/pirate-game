@@ -29,7 +29,17 @@ public class enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag != "Wall")
-        { Destroy(collision.gameObject); }
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                player playerScript = collision.gameObject.GetComponent<player>();
+                playerScript.TakeDamage();
+            }
+            else
+            {
+            Destroy(collision.gameObject);
+            }
+        }
 
 
     }
