@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 43afc6bc34a4fef41a16dbcd16bd993c
+guid: d113338654001c64592d4a3947e2f5b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6291044477845659394
-    second: yelenemy_0
+      213: -8316706962991847900
+    second: Untitled_Artwork2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: yelenemy_0
+      name: Untitled_Artwork2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 50
-        height: 50
+        y: 119
+        width: 1920
+        height: 831
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20f5c280f974e4750800000000000000
-      internalID: 6291044477845659394
+      spriteID: 4266ad9b41f159c80800000000000000
+      internalID: -8316706962991847900
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      yelenemy_0: 6291044477845659394
+      Untitled_Artwork2_0: -8316706962991847900
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
