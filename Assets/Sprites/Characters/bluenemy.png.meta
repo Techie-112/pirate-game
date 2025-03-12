@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bluenemy_0: -3336447489117920221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

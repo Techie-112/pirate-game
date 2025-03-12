@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7998549718242626600}
   - component: {fileID: 6186151772166649636}
   - component: {fileID: 3547199132688327314}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ranged_enemy
   m_TagString: Ranged_enemy
   m_Icon: {fileID: 0}
@@ -169,3 +169,4 @@ MonoBehaviour:
   speed: 0.3
   targetTime: 120
   Bullet: {fileID: 3635796018670090073, guid: 57b8bed2308b1be41b21263eb6e59648, type: 3}
+  move_time: 3

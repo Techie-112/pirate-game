@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      friskB_0: 1765305483699372840
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

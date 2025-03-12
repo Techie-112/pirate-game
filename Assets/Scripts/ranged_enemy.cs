@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
 public class ranged_enemy : MonoBehaviour
@@ -11,16 +15,17 @@ public class ranged_enemy : MonoBehaviour
     private Vector2 direction;
     private Rigidbody2D rb2d;
     private bool can_move = true;
-    public float targetTime = 120.0f;
+    public float targetTime = 3.0f;
     public GameObject Bullet;
-    private float angle;
+    public float move_time = 3f;
+    private GameObject game_object;
 
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         rb2d = GetComponent<Rigidbody2D>();
-
+        game_object = GetComponent<GameObject>();
 
     }
 
@@ -36,14 +41,9 @@ public class ranged_enemy : MonoBehaviour
     {
         direction = (Player.position - transform.position).normalized;
 
-        angle = Mathf.Atan2(direction.x, direction.y);
-        //get angle between current rotation and targets position
-        Quaternion Target_rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        //rotate towards the target
-        transform.right = Player.position - transform.position;
-
-        targetTime -= Time.deltaTime;
+        
+        //get angle between current rotation and targets position      
+        move_time -= Time.deltaTime;
 
         if (can_move)
         {
@@ -52,11 +52,22 @@ public class ranged_enemy : MonoBehaviour
         }
 
 
-        if (targetTime <= 0.00)
+        if (move_time <= 0.00)
         {
-            targetTime = 120f;
-            shoot();
+            //rotate towards the target
+            
+            transform.forward = Vector3.forward;
+            rb2d.linearVelocity = new Vector2(0, 0);
+            can_move = false;
+            targetTime -= Time.deltaTime;
+            if (targetTime <= 0)
+            {
+                shoot();
+            }
+
         }
+
+        
 
     }
 
@@ -69,6 +80,9 @@ public class ranged_enemy : MonoBehaviour
     {
         Debug.Log("Fired");
         // create projectile with ranged enemies position and rotation 
-        Instantiate(Bullet, transform.position + (transform.right * 1.5f), transform.rotation);
+        Instantiate(Bullet, transform.position, transform.rotation);
+        targetTime = 3f;
+        move_time = 2f;
+        can_move = true;
     }
 }

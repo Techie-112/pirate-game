@@ -53,6 +53,7 @@ public class enemy : MonoBehaviour
             if (rb2d.linearVelocityX >= 0)
             {
                 // assign going right animation
+           
             } else
             {
                 // assign going left animation

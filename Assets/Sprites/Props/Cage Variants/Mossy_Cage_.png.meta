@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mossy_Cage__0: 6653857686100036309
+      Mossy_Cage__1: -433706198532504299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
