@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: be2c0608986586e47a743fc5c963ac6b
+guid: ce1babfc71870ee4ebacabee423651c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1024871151488657658
-    second: pirateprotagright_0
+      213: -6030351410049948715
+    second: bottomDeck_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pirateprotagright_0
+      name: bottomDeck_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 671
-        height: 922
+        x: 0
+        y: 0
+        width: 1920
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60719f22e1de6c1f0800000000000000
-      internalID: -1024871151488657658
+      spriteID: 5d3623db753ef4ca0800000000000000
+      internalID: -6030351410049948715
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pirateprotagright_0: -1024871151488657658
+      bottomDeck_0: -6030351410049948715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
