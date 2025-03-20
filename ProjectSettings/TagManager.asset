@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Wall
   - Ranged_enemy
+  - Projectile
+  - Destructible
+  - ws
   layers:
   - Default
   - TransparentFX

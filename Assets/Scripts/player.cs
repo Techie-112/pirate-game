@@ -1,20 +1,33 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using System.Collections.Generic;
 public class player : MonoBehaviour
 {
     public float speed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
+    public Camera cam;
     private SpriteRenderer cursprite;
     [SerializeField] Sprite[] sprites;
     //0 = back 1 = right 2 = front 3 = left
 
-    public Camera cam;
+    public int maxLives = 3; // Total lives the player has
+    public int currentLives;
+
+    public float invincibilityDuration = 1f; // Time of invincibility after getting hit
+    private bool isInvincible = false;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cursprite = GetComponent<SpriteRenderer>();
+
+        currentLives = maxLives;
+
     }
 
     void Update()
@@ -23,6 +36,7 @@ public class player : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput.Normalize();
 
+        //handles player sprite direction based on mouse cursor
         facing();
     }
 
@@ -30,6 +44,9 @@ public class player : MonoBehaviour
     {
         rb.linearVelocity = moveInput * speed;
     }
+
+
+
 
     void facing()
     {
@@ -54,5 +71,42 @@ public class player : MonoBehaviour
         else if (angle >= 135 || angle <= -135)
         { cursprite.sprite = sprites[3]; }
 
+    }
+
+    public void TakeDamage()
+    {
+        if (isInvincible) return; // Ignore damage if invincible
+
+        currentLives--; // Reduce lives
+
+        if (currentLives <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            StartCoroutine(InvincibilityFrames());
+        }
+        Debug.Log("Player lives: " + currentLives);
+    }
+    private IEnumerator InvincibilityFrames()
+    {
+        isInvincible = true;
+        float blinkTime = 0.1f; // Blink speed
+
+        for (float i = 0; i < invincibilityDuration; i += blinkTime)
+        {
+            cursprite.enabled = !cursprite.enabled; // Toggle visibility
+            yield return new WaitForSeconds(blinkTime);
+        }
+
+        cursprite.enabled = true;
+        isInvincible = false;
+    }
+    private void Die()
+    {
+        Debug.Log("Player Died");
+        // Add game over logic eventually (like a restart menu)
+        Destroy(gameObject);
     }
 }

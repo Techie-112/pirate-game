@@ -1,41 +1,98 @@
 using UnityEngine;
+using System.Collections;
 
 public class enemy : MonoBehaviour
 {
+    //the enemy's stats
     public float speed = 5f;
     public float rotationSpeed = 5f;
+    public int damage = 1;
+    player player;
+    //charge mechanic variables
+    public float chargeForce = 500f;
+    public float stopDistance = 3f;
+    public float pauseTime = 1f;
+    public float chargeDrag = 8f; //drag doesn't work right now I'll fix it LATER!!!
+    public float chargeDuration;
+    private Vector2 chargeDirection;
+    private enum EnemyState { Approaching, Pausing, Charging }
+    private EnemyState currentState = EnemyState.Approaching;
 
-    private Transform player;
+    //variables related to enemy movement
+    private Transform target;
     private Vector2 direction;
     private float angle;
-    private Rigidbody2D rb2d;
+    private Rigidbody2D rb;
 
+    //variables related to enemy rotation
+    private SpriteRenderer cursprite;
+    [SerializeField] Sprite[] sprites;
+    //0 = back 1 = right 2 = front 3 = left
+
+    //reference to wavespawner
+    wavespawner ws;
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindWithTag("Player").transform;
+        cursprite = GetComponent<SpriteRenderer>();
+        rb.linearDamping = 0;  // Ensure normal movement has no drag
+        ws = GameObject.FindWithTag("ws").GetComponent<wavespawner>();
     }
 
     void Update()
     {
-        direction = (player.position - transform.position).normalized;
+        
     }
 
     private void FixedUpdate()
     {
-        moveEnemy();
+        
+        if (currentState == EnemyState.Approaching)
+        {
+            ApproachPlayer();
+        }
+        else if (currentState == EnemyState.Pausing)
+        {
+            //this is just here for funsies I guess
+        }
+        else if ( currentState == EnemyState.Charging)
+        {
+            //Charge();
+        }
+        else
+        {
+            Debug.Log("currentState is somehow none of the above. It is: " +  currentState);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag != "Wall")
-        { Destroy(collision.gameObject); }
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                player playerScript = collision.gameObject.GetComponent<player>();
+                playerScript.TakeDamage();
+            }
+            else
+            {
+            Destroy(collision.gameObject);
+            
+            }
+        }
+
 
 
     }
 
+    private void OnDestroy()
+    {
+        ws.enemiesLeft--;
+    }
 
-    private void moveEnemy()
+
+    private void ApproachPlayer()
     {
         /*this.angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         //get angle between current rotation and target position
@@ -44,31 +101,66 @@ public class enemy : MonoBehaviour
         //rotate towards the target
         this.transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed); */
 
-        //move towards the player
-        this.rb2d.linearVelocity = new Vector2(direction.x * speed, direction.y * speed);
-        //i kept getting a warning saying that rb2d.velocity was obsolete, so i changed it to linearVelocity -max
+        //get distance from player to this enemy
+        float distance = Vector2.Distance(transform.position, target.position);
 
-        if (rb2d.linearVelocityX > rb2d.linearVelocityY)
+        if (distance > stopDistance)
         {
-            if (rb2d.linearVelocityX >= 0)
+            //move towards the player
+            direction = (target.position - transform.position).normalized;
+            rb.linearVelocity = direction * speed;
+
+            //decide which way this enemy is facing
+            if (rb.linearVelocityX > rb.linearVelocityY)
             {
-                // assign going right animation
-           
-            } else
-            {
-                // assign going left animation
-            }
-        } else
-        {
-            if (rb2d.linearVelocityY >= 0)
-            {
-                // assign going up animation
+                if (rb.linearVelocityX >= 0)
+                {
+                    //going right
+                    cursprite.sprite = sprites[1];
+                }
+                else
+                {
+                    //going left
+                    cursprite.sprite = sprites[3];
+                }
             }
             else
             {
-                // assign going down animation
+                if (rb.linearVelocityY >= 0)
+                {
+                    //going up
+                    cursprite.sprite = sprites[0];
+                }
+                else
+                {
+                    //going down
+                    cursprite.sprite = sprites[2];
+                }
             }
-        }
 
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+            StartCoroutine(PauseBeforeCharge());
+        }
+    }
+    IEnumerator PauseBeforeCharge()
+    {
+        currentState = EnemyState.Pausing;
+        chargeDirection = (target.position - transform.position).normalized;
+        //gets direction BEFORE the pause, letting the player dodge
+        yield return new WaitForSeconds(pauseTime);
+
+        currentState = EnemyState.Charging;
+        rb.linearDamping = chargeDrag;  // Apply drag to slow down gradually
+        Debug.Log("chargeDirection: " + chargeDirection + "] wah [" + chargeForce);
+        rb.linearVelocity = chargeDirection * chargeForce;
+
+        yield return new WaitForSeconds(chargeDuration);  // Give time to charge
+        rb.linearDamping = 0;  // Reset drag for normal movement
+        currentState = EnemyState.Approaching;
+
+        //drag doesn't work right now I'll fix it LATER!!!
     }
 }

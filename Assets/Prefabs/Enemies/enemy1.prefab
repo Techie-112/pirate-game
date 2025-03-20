@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1222214216519386675}
   - component: {fileID: 2185548348466480269}
   - component: {fileID: 1473859687520705712}
-  - component: {fileID: 583880232994900824}
+  - component: {fileID: 5938248916325922418}
   m_Layer: 0
   m_Name: enemy1
   m_TagString: Enemy
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.74, y: 2.1499999, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4360097019844063634, guid: 013771441506dfa48b3b41e283e3ffe7, type: 3}
+  m_Sprite: {fileID: 50075459684498720, guid: a0ac59d2dc90aa342b09be82c6e0f32d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,6 +104,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   rotationSpeed: 5
+  damage: 1
+  chargeForce: 7
+  stopDistance: 2.7
+  pauseTime: 0.8
+  chargeDrag: 1
+  chargeDuration: 0.5
+  sprites:
+  - {fileID: -8400967811375914839, guid: 18a8595f4f215984b80c6d8cbee2cd39, type: 3}
+  - {fileID: -5899408175027248506, guid: bc57cbd2b3b40cb4b8864d0ae41a459b, type: 3}
+  - {fileID: 50075459684498720, guid: a0ac59d2dc90aa342b09be82c6e0f32d, type: 3}
+  - {fileID: -3741768999975896228, guid: 335d1e1c222976f40befc60d9d6765a2, type: 3}
 --- !u!50 &1473859687520705712
 Rigidbody2D:
   serializedVersion: 5
@@ -112,7 +123,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260159919915242125}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
@@ -130,9 +141,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!60 &583880232994900824
-PolygonCollider2D:
+  m_Constraints: 4
+--- !u!70 &5938248916325922418
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -165,20 +176,6 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: 0, y: -0.24298349}
+  m_Size: {x: 5.7417493, y: 8.075067}
+  m_Direction: 0
