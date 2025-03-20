@@ -9,6 +9,7 @@ TagManager:
   - Ranged_enemy
   - Projectile
   - Destructible
+  - ws
   layers:
   - Default
   - TransparentFX

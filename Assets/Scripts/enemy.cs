@@ -28,12 +28,16 @@ public class enemy : MonoBehaviour
     private SpriteRenderer cursprite;
     [SerializeField] Sprite[] sprites;
     //0 = back 1 = right 2 = front 3 = left
+
+    //reference to wavespawner
+    wavespawner ws;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
         cursprite = GetComponent<SpriteRenderer>();
         rb.linearDamping = 0;  // Ensure normal movement has no drag
+        ws = GameObject.FindWithTag("ws").GetComponent<wavespawner>();
     }
 
     void Update()
@@ -74,11 +78,17 @@ public class enemy : MonoBehaviour
             else
             {
             Destroy(collision.gameObject);
+            
             }
         }
 
 
 
+    }
+
+    private void OnDestroy()
+    {
+        ws.enemiesLeft--;
     }
 
 

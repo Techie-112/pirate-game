@@ -15,12 +15,16 @@ public class ranged_enemy : MonoBehaviour
     public GameObject Bullet;
     private float angle;
 
+    //reference to wavespawner
+    wavespawner ws;
+
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         rb2d = GetComponent<Rigidbody2D>();
 
+        ws = GameObject.FindWithTag("ws").GetComponent<wavespawner>();
 
     }
 
@@ -57,12 +61,17 @@ public class ranged_enemy : MonoBehaviour
             targetTime = 120f;
             shoot();
         }
-
+       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Destroy(collision.gameObject);
+    }
+
+    public void OnDestroy()
+    {
+        ws.enemiesLeft--;
     }
 
     public void shoot()

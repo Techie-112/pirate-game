@@ -9,9 +9,12 @@ public class HealthDisplay : MonoBehaviour
     public Image[] hearts;
 
     public player player;
- 
 
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<player>();
+    }
     void Update()
     {
 

@@ -20,7 +20,6 @@ public class player : MonoBehaviour
     public float invincibilityDuration = 1f; // Time of invincibility after getting hit
     private bool isInvincible = false;
 
-    private int enemiesLeft;
 
     void Start()
     {
@@ -39,10 +38,6 @@ public class player : MonoBehaviour
 
         //handles player sprite direction based on mouse cursor
         facing();
-
-        //gets the current number of enemies left onscreen
-        enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length 
-            + GameObject.FindGameObjectsWithTag("Ranged_enemy").Length;
     }
 
     void FixedUpdate()
@@ -51,14 +46,7 @@ public class player : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.name == "stairs")
-        {
-            print("beep boop");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
+
 
     void facing()
     {

@@ -18,22 +18,26 @@ public class wavespawner : MonoBehaviour
     public Transform[] spawnpoints;
 
     private wave curwave;
-    private int wavenum;
+    public int wavenum;
 
     private float nextWave = 0f;
     private float nextEnemy;
 
     private bool canSpawn = true;
 
-
+    public int enemiesLeft;
 
     private void Update()
     {
-        curwave = waves[wavenum];
 
-        if (Time.time > nextWave && wavenum < waves.Length)
+        if (wavenum < waves.Length)
         {
-            spawnWave();         
+            curwave = waves[wavenum];
+
+            if (Time.time > nextWave)
+            {
+                spawnWave();
+            }
         }
     }
 
@@ -54,11 +58,14 @@ public class wavespawner : MonoBehaviour
 
     private void spawnEnemy() 
     {
+        enemiesLeft++;
+        print(enemiesLeft);
         Transform randomPoint = spawnpoints[Random.Range(0, spawnpoints.Length)];
         Instantiate(curwave.enemyList[curwave.enemyIndex], randomPoint.position, Quaternion.identity);
         
         curwave.enemyIndex++;
         nextEnemy = Time.time + curwave.enemyInterval;
+        
 
         if (curwave.enemyIndex == curwave.enemyList.Length)
         {
