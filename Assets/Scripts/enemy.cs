@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class enemy : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class enemy : MonoBehaviour
 
     //reference to wavespawner
     wavespawner ws;
+
+    bool Can_move = true;
+    Vector2 Current_velocity;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -50,7 +55,11 @@ public class enemy : MonoBehaviour
         
         if (currentState == EnemyState.Approaching)
         {
-            ApproachPlayer();
+            if (Can_move) 
+            {
+                ApproachPlayer();
+            }
+            
         }
         else if (currentState == EnemyState.Pausing)
         {
