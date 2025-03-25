@@ -9,14 +9,17 @@ public class enemy : MonoBehaviour
     public float rotationSpeed = 5f;
     public int damage = 1;
     player player;
+
     //charge mechanic variables
     public float chargeForce = 500f;
     public float stopDistance = 3f;
     public float pauseTime = 1f;
-    public float chargeDrag = 8f; //drag doesn't work right now I'll fix it LATER!!!
     public float chargeDuration;
+    public float slowdownRate = 0.99f; // How much speed decreases per frame
+    private bool isOnCooldown = false;
     private Vector2 chargeDirection;
-    private enum EnemyState { Approaching, Pausing, Charging }
+    public float cooldownTime = 1f; // Cooldown after charge
+    private enum EnemyState { Approaching, Pausing, Charging, Cooldown }
     private EnemyState currentState = EnemyState.Approaching;
 
     //variables related to enemy movement
@@ -33,7 +36,6 @@ public class enemy : MonoBehaviour
     //reference to wavespawner
     wavespawner ws;
 
-    bool Can_move = true;
     Vector2 Current_velocity;
 
     void Start()
@@ -47,31 +49,19 @@ public class enemy : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
     {
-        
+
         if (currentState == EnemyState.Approaching)
         {
-            if (Can_move) 
-            {
-                ApproachPlayer();
-            }
-            
-        }
-        else if (currentState == EnemyState.Pausing)
-        {
-            //this is just here for funsies I guess
-        }
-        else if ( currentState == EnemyState.Charging)
-        {
-            //Charge();
+            ApproachPlayer();
         }
         else
         {
-            Debug.Log("currentState is somehow none of the above. It is: " +  currentState);
+            //Debug.Log("currentState is: " +  currentState);
         }
     }
 
@@ -113,7 +103,7 @@ public class enemy : MonoBehaviour
         //get distance from player to this enemy
         float distance = Vector2.Distance(transform.position, target.position);
 
-        if (distance > stopDistance)
+        if (distance > stopDistance || isOnCooldown)
         {
             //move towards the player
             direction = (target.position - transform.position).normalized;
@@ -148,28 +138,48 @@ public class enemy : MonoBehaviour
             }
 
         }
-        else
+        else 
         {
             rb.linearVelocity = Vector2.zero;
-            StartCoroutine(PauseBeforeCharge());
+            
+                StartCoroutine(PauseBeforeCharge());
+            
         }
     }
     IEnumerator PauseBeforeCharge()
     {
         currentState = EnemyState.Pausing;
-        chargeDirection = (target.position - transform.position).normalized;
-        //gets direction BEFORE the pause, letting the player dodge
+        rb.linearVelocity = Vector2.zero; // Stop movement
+        chargeDirection = (target.position - transform.position).normalized; //get direction before pausing, allowing dodging
         yield return new WaitForSeconds(pauseTime);
 
+        if (chargeDirection == Vector2.zero) chargeDirection = Vector2.right; // Prevent zero direction issues
+
         currentState = EnemyState.Charging;
-        rb.linearDamping = chargeDrag;  // Apply drag to slow down gradually
-        Debug.Log("chargeDirection: " + chargeDirection + "] wah [" + chargeForce);
+
         rb.linearVelocity = chargeDirection * chargeForce;
+        //rb.AddForce(chargeDirection * chargeForce, ForceMode2D.Impulse); // Apply force
 
-        yield return new WaitForSeconds(chargeDuration);  // Give time to charge
-        rb.linearDamping = 0;  // Reset drag for normal movement
+        StartCoroutine(SlowDown()); // Start slowdown process
+        yield return new WaitForSeconds(chargeDuration);
+
         currentState = EnemyState.Approaching;
+    }
+    IEnumerator SlowDown()
+    {
+        float timer = 0;
+        while (timer < chargeDuration)
+        {
+            rb.linearVelocity *= slowdownRate;
+            timer += Time.deltaTime;
+            yield return null;
+        }
 
-        //drag doesn't work right now I'll fix it LATER!!!
+        currentState = EnemyState.Approaching;
+        isOnCooldown = true; // Start cooldown
+        Debug.Log("Cooldown starts");
+        yield return new WaitForSeconds(cooldownTime);
+        isOnCooldown = false; // Reset cooldown
+        Debug.Log("Cooldown ends");
     }
 }

@@ -38,6 +38,12 @@ public class player : MonoBehaviour
 
         //handles player sprite direction based on mouse cursor
         facing();
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            currentLives++;
+            Debug.Log("current lives: " + currentLives);
+        }
     }
 
     void FixedUpdate()

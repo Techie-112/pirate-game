@@ -105,11 +105,12 @@ MonoBehaviour:
   speed: 2
   rotationSpeed: 5
   damage: 1
-  chargeForce: 7
+  chargeForce: 13
   stopDistance: 2.7
-  pauseTime: 0.8
-  chargeDrag: 1
-  chargeDuration: 0.5
+  pauseTime: 0.6
+  chargeDuration: 0.7
+  slowdownRate: 0.982
+  cooldownTime: 1
   sprites:
   - {fileID: -8400967811375914839, guid: 18a8595f4f215984b80c6d8cbee2cd39, type: 3}
   - {fileID: -5899408175027248506, guid: bc57cbd2b3b40cb4b8864d0ae41a459b, type: 3}
