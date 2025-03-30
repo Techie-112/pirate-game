@@ -21,6 +21,7 @@ public class enemy : MonoBehaviour
     public float cooldownTime = 1f; // Cooldown after charge
     private enum EnemyState { Approaching, Pausing, Charging, Cooldown }
     private EnemyState currentState = EnemyState.Approaching;
+    public float chargeDrag = 1.5f; // Adjust for smoother slowdown
 
     //variables related to enemy movement
     private Transform target;
@@ -146,7 +147,7 @@ public class enemy : MonoBehaviour
             
         }
     }
-    IEnumerator PauseBeforeCharge()
+    /*IEnumerator PauseBeforeCharge()
     {
         currentState = EnemyState.Pausing;
         rb.linearVelocity = Vector2.zero; // Stop movement
@@ -177,9 +178,49 @@ public class enemy : MonoBehaviour
 
         currentState = EnemyState.Approaching;
         isOnCooldown = true; // Start cooldown
-        Debug.Log("Cooldown starts");
+        //Debug.Log("Cooldown starts");
         yield return new WaitForSeconds(cooldownTime);
         isOnCooldown = false; // Reset cooldown
-        Debug.Log("Cooldown ends");
+        //Debug.Log("Cooldown ends");
+    } */
+    IEnumerator PauseBeforeCharge()
+    {
+        currentState = EnemyState.Pausing;
+        rb.linearVelocity = Vector2.zero; // Stop movement
+        yield return new WaitForSeconds(pauseTime);
+
+        chargeDirection = (target.position - transform.position).normalized;
+        if (chargeDirection == Vector2.zero) chargeDirection = Vector2.right; // Prevent zero direction issues
+
+        currentState = EnemyState.Charging;
+        rb.linearDamping = chargeDrag; // Apply drag for gradual slowdown
+
+        rb.linearVelocity = chargeDirection * chargeForce; // Give an initial velocity boost
+        
+        yield return new WaitForSeconds(chargeDuration); // Let the charge happen
+        rb.linearDamping = 0; // Reset drag for normal movement
+
+        currentState = EnemyState.Approaching;
+        isOnCooldown = true; // Start cooldown
+        //Debug.Log("Cooldown starts");
+        yield return new WaitForSeconds(cooldownTime);
+        isOnCooldown = false; // Reset cooldown
+        //Debug.Log("Cooldown ends");
+
+        currentState = EnemyState.Approaching;
     }
+
+    IEnumerator SlowDown()
+    {
+        float timer = 0;
+        while (timer < chargeDuration)
+        {
+            rb.linearVelocity *= slowdownRate; // Reduce speed gradually
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        
+    }
+
 }

@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.74, y: 2.1499999, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.12, y: 0.12, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,15 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045487ea5d9103842b56080e85623f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.6
   rotationSpeed: 5
   damage: 1
-  chargeForce: 13
+  chargeForce: 8
   stopDistance: 2.7
-  pauseTime: 0.6
+  pauseTime: 0.5
   chargeDuration: 0.7
   slowdownRate: 0.982
   cooldownTime: 1
+  chargeDrag: 1.2
   sprites:
   - {fileID: -8400967811375914839, guid: 18a8595f4f215984b80c6d8cbee2cd39, type: 3}
   - {fileID: -5899408175027248506, guid: bc57cbd2b3b40cb4b8864d0ae41a459b, type: 3}
@@ -124,14 +125,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260159919915242125}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

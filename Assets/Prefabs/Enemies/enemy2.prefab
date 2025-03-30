@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.31, y: 3.9599998, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,6 +104,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   rotationSpeed: 5
+  damage: 1
+  chargeForce: 500
+  stopDistance: 3
+  pauseTime: 1
+  chargeDuration: 0
+  slowdownRate: 0.99
+  cooldownTime: 1
+  chargeDrag: 1.5
+  sprites: []
 --- !u!50 &7996788844051350634
 Rigidbody2D:
   serializedVersion: 5
