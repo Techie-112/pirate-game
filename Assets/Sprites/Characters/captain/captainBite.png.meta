@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 43afc6bc34a4fef41a16dbcd16bd993c
+guid: 4791ec7632dedb744b51e09b35148643
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6291044477845659394
-    second: yelenemy_0
+      213: -5323748928060047894
+    second: captainBite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: yelenemy_0
+      name: captainBite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 50
-        height: 50
+        x: 68
+        y: 17
+        width: 75
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20f5c280f974e4750800000000000000
-      internalID: 6291044477845659394
+      spriteID: aed3d9d6e8e3e16b0800000000000000
+      internalID: -5323748928060047894
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      yelenemy_0: 6291044477845659394
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

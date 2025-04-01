@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5503728599214306618}
   - component: {fileID: 7584584167925790451}
   - component: {fileID: 7998549718242626600}
-  - component: {fileID: 6186151772166649636}
   - component: {fileID: 3547199132688327314}
+  - component: {fileID: 1087307493395461511}
   m_Layer: 3
   m_Name: ranged_enemy
   m_TagString: Ranged_enemy
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.38, y: -1.54, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.20210934, a: 1}
+  m_Sprite: {fileID: -8013969298054309724, guid: 07f15389e1b29f44da5d232925be1cbf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -117,8 +117,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &6186151772166649636
-CircleCollider2D:
+--- !u!114 &3547199132688327314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445497189906097760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6de2c9d2bd3ef4fbf7949b5b6b26f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  speed: 0.3
+  targetTime: 120
+  Bullet: {fileID: 3635796018670090073, guid: 57b8bed2308b1be41b21263eb6e59648, type: 3}
+--- !u!70 &1087307493395461511
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -152,20 +168,5 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &3547199132688327314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3445497189906097760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6de2c9d2bd3ef4fbf7949b5b6b26f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  speed: 0.3
-  targetTime: 120
-  Bullet: {fileID: 3635796018670090073, guid: 57b8bed2308b1be41b21263eb6e59648, type: 3}
+  m_Size: {x: 5.5, y: 8}
+  m_Direction: 0
