@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class enemy : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class enemy : MonoBehaviour
     private bool isOnCooldown = false;
     private Vector2 chargeDirection;
     public float cooldownTime = 1f; // Cooldown after charge
-    private enum EnemyState { Approaching, Pausing, Charging, Cooldown }
+    private enum EnemyState { Approaching, Pausing, Charging, Cooldown, Dying }
     private EnemyState currentState = EnemyState.Approaching;
     public float chargeDrag = 1.5f; // Adjust for smoother slowdown
 
@@ -75,15 +76,51 @@ public class enemy : MonoBehaviour
                 player playerScript = collision.gameObject.GetComponent<player>();
                 playerScript.TakeDamage();
             }
-            else
+            else if (collision.gameObject.tag == "Enemy")
             {
-            Destroy(collision.gameObject);
-            
+                // gets the script of the enemy it collided. this might be redundant idk
+                enemy EnemyScript = collision.gameObject.GetComponent<enemy>();
+                EnemyScript.Die(); //kills the other enemy that its collieded
             }
         }
 
 
 
+    }
+
+    public void Die()
+    {
+        currentState = EnemyState.Dying;
+
+        // Turn red
+        cursprite.color = Color.red;
+
+        StartCoroutine(FallOver());
+        // "Fall over" by rotating 90 degrees (in 2D space, z-axis)
+        transform.rotation = Quaternion.Euler(0, 0, 90);
+
+        // Disable enemy behavior (we hope)
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+
+        //Destroy after a delay
+        Destroy(gameObject, 0.50f);
+    }
+    private IEnumerator FallOver()
+    {
+        float duration = 0.3f;
+        float elapsed = 0f;
+        Quaternion startRot = transform.rotation;
+        Quaternion endRot = Quaternion.Euler(0, 0, -90);
+
+        while (elapsed < duration)
+        {
+            transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.rotation = endRot;
     }
 
     private void OnDestroy()
@@ -147,42 +184,6 @@ public class enemy : MonoBehaviour
             
         }
     }
-    /*IEnumerator PauseBeforeCharge()
-    {
-        currentState = EnemyState.Pausing;
-        rb.linearVelocity = Vector2.zero; // Stop movement
-        chargeDirection = (target.position - transform.position).normalized; //get direction before pausing, allowing dodging
-        yield return new WaitForSeconds(pauseTime);
-
-        if (chargeDirection == Vector2.zero) chargeDirection = Vector2.right; // Prevent zero direction issues
-
-        currentState = EnemyState.Charging;
-
-        rb.linearVelocity = chargeDirection * chargeForce;
-        //rb.AddForce(chargeDirection * chargeForce, ForceMode2D.Impulse); // Apply force
-
-        StartCoroutine(SlowDown()); // Start slowdown process
-        yield return new WaitForSeconds(chargeDuration);
-
-        currentState = EnemyState.Approaching;
-    }
-    IEnumerator SlowDown()
-    {
-        float timer = 0;
-        while (timer < chargeDuration)
-        {
-            rb.linearVelocity *= slowdownRate;
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        currentState = EnemyState.Approaching;
-        isOnCooldown = true; // Start cooldown
-        //Debug.Log("Cooldown starts");
-        yield return new WaitForSeconds(cooldownTime);
-        isOnCooldown = false; // Reset cooldown
-        //Debug.Log("Cooldown ends");
-    } */
     IEnumerator PauseBeforeCharge()
     {
         currentState = EnemyState.Pausing;
@@ -210,7 +211,7 @@ public class enemy : MonoBehaviour
         currentState = EnemyState.Approaching;
     }
 
-    IEnumerator SlowDown()
+    /*IEnumerator SlowDown()
     {
         float timer = 0;
         while (timer < chargeDuration)
@@ -218,9 +219,7 @@ public class enemy : MonoBehaviour
             rb.linearVelocity *= slowdownRate; // Reduce speed gradually
             timer += Time.deltaTime;
             yield return null;
-        }
-
-        
+        }   
     }
-
+    */
 }

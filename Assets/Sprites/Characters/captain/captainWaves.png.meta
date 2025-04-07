@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      captainWaves_0: 2800029079196746243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
