@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      captainTentacles_0: -411318528571352220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
