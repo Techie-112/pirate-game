@@ -834,24 +834,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TITLE HERE
+  m_text: dead in the water
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ddb084de0b4d30d49bab38c975ad27c1, type: 2}
-  m_sharedMaterial: {fileID: 3771482718975605542, guid: ddb084de0b4d30d49bab38c975ad27c1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ddde8c6df686134439cfec56696076b2, type: 2}
+  m_sharedMaterial: {fileID: 1854360343853552079, guid: ddde8c6df686134439cfec56696076b2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287730117
-  m_fontColor: {r: 0.7735849, g: 0.56680906, b: 0.56680906, a: 1}
+    rgba: 4287462525
+  m_fontColor: {r: 0.49210206, g: 0.48558193, b: 0.55345905, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 0.43188557, g: 0.5471698, b: 0.45622113, a: 1}
-    bottomRight: {r: 0.43137258, g: 0.54901963, b: 0.454902, a: 1}
+    bottomLeft: {r: 0.51572317, g: 0.37123892, b: 0.35192427, a: 1}
+    bottomRight: {r: 0.5176471, g: 0.37254903, b: 0.3529412, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -861,15 +861,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -893,7 +893,7 @@ MonoBehaviour:
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
-  m_uvLineOffset: 0
+  m_uvLineOffset: 90
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 0

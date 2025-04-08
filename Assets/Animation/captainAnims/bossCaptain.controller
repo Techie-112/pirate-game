@@ -34,7 +34,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d535ed0cffebb8249b2020832397921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
 --- !u!1107 &-7402169642632637275
 AnimatorStateMachine:
   serializedVersion: 6
@@ -220,6 +219,18 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &2170559546866121458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68503f05020c944fbf6fadf8389cefa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1101 &2184456745682479847
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
