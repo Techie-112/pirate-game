@@ -9,14 +9,12 @@ public class enemy : MonoBehaviour
     public float speed = 5f;
     public float rotationSpeed = 5f;
     public int damage = 1;
-    player player;
 
     //charge mechanic variables
     public float chargeForce = 500f;
     public float stopDistance = 3f;
     public float pauseTime = 1f;
     public float chargeDuration;
-    public float slowdownRate = 0.99f; // How much speed decreases per frame
     private bool isOnCooldown = false;
     private Vector2 chargeDirection;
     public float cooldownTime = 1f; // Cooldown after charge
@@ -27,7 +25,6 @@ public class enemy : MonoBehaviour
     //variables related to enemy movement
     private Transform target;
     private Vector2 direction;
-    private float angle;
     private Rigidbody2D rb;
 
     //variables related to enemy rotation
@@ -210,16 +207,4 @@ public class enemy : MonoBehaviour
 
         currentState = EnemyState.Approaching;
     }
-
-    /*IEnumerator SlowDown()
-    {
-        float timer = 0;
-        while (timer < chargeDuration)
-        {
-            rb.linearVelocity *= slowdownRate; // Reduce speed gradually
-            timer += Time.deltaTime;
-            yield return null;
-        }   
-    }
-    */
 }

@@ -76,8 +76,10 @@ public class ranged_enemy : MonoBehaviour
 
     public void shoot()
     {
+        
         Debug.Log("Fired");
         // create projectile with ranged enemies position and rotation 
+        //Quaternion bulletRotation = transform.rotation * Quaternion.Euler(0, 0, 90);
         Instantiate(Bullet, transform.position + (transform.right * 1.5f), transform.rotation);
     }
 }

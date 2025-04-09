@@ -909,7 +909,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      waterSpritesheet_0: -4140936885551849722
+      waterSpritesheet_1: -6330071365221714870
+      waterSpritesheet_10: 9178183914561388662
+      waterSpritesheet_11: 5039723833799797918
+      waterSpritesheet_12: -3984457554958196287
+      waterSpritesheet_13: 1062676884662212604
+      waterSpritesheet_14: 1938423141266612805
+      waterSpritesheet_15: 200190489524842630
+      waterSpritesheet_16: -3830142080156921617
+      waterSpritesheet_17: -648043144312321495
+      waterSpritesheet_18: 5869752210649212085
+      waterSpritesheet_19: 364908161044389253
+      waterSpritesheet_2: -630341942414897952
+      waterSpritesheet_20: 5689456385148385954
+      waterSpritesheet_21: -2168446835800841882
+      waterSpritesheet_22: 3140949629857573870
+      waterSpritesheet_23: -3410880837417908685
+      waterSpritesheet_24: 3209588513283101946
+      waterSpritesheet_25: -8122327979249462503
+      waterSpritesheet_26: 798865592772124779
+      waterSpritesheet_27: -7611388232213388833
+      waterSpritesheet_28: -7284807718638210098
+      waterSpritesheet_29: 1938488210572714724
+      waterSpritesheet_3: 9204482887319924585
+      waterSpritesheet_30: -3385753394998259011
+      waterSpritesheet_31: 5449939420311242847
+      waterSpritesheet_4: 2807973374435357283
+      waterSpritesheet_5: -1444918012483279475
+      waterSpritesheet_6: -750931891391015887
+      waterSpritesheet_7: -4850442473120566971
+      waterSpritesheet_8: 5285549028229349238
+      waterSpritesheet_9: 6860585543022908150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

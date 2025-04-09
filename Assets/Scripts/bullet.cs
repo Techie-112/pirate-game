@@ -18,14 +18,11 @@ public class bullet : MonoBehaviour
         direction = (Player.position - transform.position).normalized;
         angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.right = Player.position - transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        rgbd2D.linearVelocity = transform.TransformDirection(Vector3.right) * muzzle_velocity;
+    void FixedUpdate()
+    { 
+        rgbd2D.linearVelocity = transform.TransformDirection(Vector3.right) * muzzle_velocity ;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,6 +39,6 @@ public class bullet : MonoBehaviour
             Destroy(collision.gameObject);
             }
         }
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
