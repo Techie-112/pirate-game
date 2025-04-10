@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: 9aa01c2b66cd34b4ebe5d1d9353c0f94
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 765719472386304236
+    second: puddly tilesheet_0
+  - first:
+      213: -3788902081312826645
+    second: puddly tilesheet_1
+  - first:
+      213: 8159922424820338604
+    second: puddly tilesheet_2
+  - first:
+      213: 3682751957963488264
+    second: puddly tilesheet_3
+  - first:
+      213: -5062300672890463271
+    second: puddly tilesheet_4
+  - first:
+      213: 1845416184919865976
+    second: puddly tilesheet_5
+  - first:
+      213: -3442159009002470408
+    second: puddly tilesheet_6
+  - first:
+      213: 7468519756733951647
+    second: puddly tilesheet_7
+  - first:
+      213: 9116277805543517813
+    second: puddly tilesheet_8
+  - first:
+      213: -8353472111572947505
+    second: puddly tilesheet_9
+  - first:
+      213: 2478397038730727559
+    second: puddly tilesheet_10
+  - first:
+      213: 2273597576003395947
+    second: puddly tilesheet_11
+  - first:
+      213: 8340179208413184520
+    second: puddly tilesheet_12
+  - first:
+      213: -4640820261620622008
+    second: puddly tilesheet_13
+  - first:
+      213: -5649983901089205939
+    second: puddly tilesheet_14
+  - first:
+      213: 2282098344479771172
+    second: puddly tilesheet_15
+  - first:
+      213: 7987704075986743567
+    second: puddly tilesheet_16
+  - first:
+      213: -4896651049879600148
+    second: puddly tilesheet_17
+  - first:
+      213: -3678723445441416031
+    second: puddly tilesheet_18
+  - first:
+      213: 8137161829707244108
+    second: puddly tilesheet_19
+  - first:
+      213: -9050494090620243739
+    second: puddly tilesheet_20
+  - first:
+      213: 5226492180465061874
+    second: puddly tilesheet_21
+  - first:
+      213: 5095069462127162232
+    second: puddly tilesheet_22
+  - first:
+      213: -5140507366664985843
+    second: puddly tilesheet_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: puddly tilesheet_0
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 2517
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce86f2d9dc160aa00800000000000000
+      internalID: 765719472386304236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 2517
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caf0926563edd3170800000000000000
+      internalID: 8159922424820338604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_4
+      rect:
+        serializedVersion: 2
+        x: 4589
+        y: 2517
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db9426fb581fb9b0800000000000000
+      internalID: -5062300672890463271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_6
+      rect:
+        serializedVersion: 2
+        x: 6509
+        y: 2517
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f34fff5e9efa30d0800000000000000
+      internalID: -3442159009002470408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_8
+      rect:
+        serializedVersion: 2
+        x: 8429
+        y: 2517
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ee2313d56838e70800000000000000
+      internalID: 9116277805543517813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_10
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1437
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 780dce1c9f8056220800000000000000
+      internalID: 2478397038730727559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 1437
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80201984dc44eb370800000000000000
+      internalID: 8340179208413184520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_14
+      rect:
+        serializedVersion: 2
+        x: 4589
+        y: 1437
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d41f6eca3993791b0800000000000000
+      internalID: -5649983901089205939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_16
+      rect:
+        serializedVersion: 2
+        x: 6509
+        y: 1437
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01312459860ade60800000000000000
+      internalID: 7987704075986743567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_18
+      rect:
+        serializedVersion: 2
+        x: 8429
+        y: 1437
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4309f548c82fcc0800000000000000
+      internalID: -3678723445441416031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_20
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 357
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0fece739f266280800000000000000
+      internalID: -9050494090620243739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puddly tilesheet_22
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 357
+        width: 568
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873b7045ea255b640800000000000000
+      internalID: 5095069462127162232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4172dc7d61c1a4e4ab8e19801b26308b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      puddly tilesheet_0: 765719472386304236
+      puddly tilesheet_10: 2478397038730727559
+      puddly tilesheet_12: 8340179208413184520
+      puddly tilesheet_14: -5649983901089205939
+      puddly tilesheet_16: 7987704075986743567
+      puddly tilesheet_18: -3678723445441416031
+      puddly tilesheet_19: 8137161829707244108
+      puddly tilesheet_2: 8159922424820338604
+      puddly tilesheet_20: -9050494090620243739
+      puddly tilesheet_22: 5095069462127162232
+      puddly tilesheet_4: -5062300672890463271
+      puddly tilesheet_6: -3442159009002470408
+      puddly tilesheet_8: 9116277805543517813
+      puddly tilesheet_9: -8353472111572947505
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
