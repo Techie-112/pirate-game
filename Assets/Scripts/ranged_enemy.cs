@@ -61,7 +61,7 @@ public class ranged_enemy : MonoBehaviour
             targetTime = 120f;
             shoot();
         }
-       
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
