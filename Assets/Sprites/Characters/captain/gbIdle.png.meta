@@ -1,15 +1,24 @@
 fileFormatVersion: 2
-guid: e0c3e8ba091b47141a365be5197df313
+guid: 3271cd214f4af514a8ac0c2967adc9da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1514552233022903516
-    second: bulletright_0
+      213: 4353998082924995542
+    second: gbIdle_0
+  - first:
+      213: -1535990482917849489
+    second: gbIdle_1
+  - first:
+      213: -3284428769931721678
+    second: gbIdle_2
+  - first:
+      213: -7803972499615089227
+    second: gbIdle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -100,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bulletright_0
+      name: gbiFront
       rect:
         serializedVersion: 2
-        x: 193
-        y: 881
-        width: 706
-        height: 231
+        x: 45
+        y: 329
+        width: 427
+        height: 411
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd4da134b35c40510800000000000000
-      internalID: 1514552233022903516
+      spriteID: 6d3e97d10328c6c30800000000000000
+      internalID: 4353998082924995542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbiLeft
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 335
+        width: 156
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f660d473bc01faae0800000000000000
+      internalID: -1535990482917849489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbiSide
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 336
+        width: 416
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23485267f6d5b62d0800000000000000
+      internalID: -3284428769931721678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gbiRight
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 329
+        width: 156
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd768bdb58b2b390800000000000000
+      internalID: -7803972499615089227
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0562c3f8be8c3664ca2e9f0f89a9aae9
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bulletright_0: 1514552233022903516
+      gbiFront: 4353998082924995542
+      gbiLeft: -1535990482917849489
+      gbiRight: -7803972499615089227
+      gbiSide: -3284428769931721678
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

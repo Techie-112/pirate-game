@@ -21,6 +21,11 @@ public class captain : MonoBehaviour
     public waterboarding water;
     public Transform[] waterpos;
 
+    //variables related to enemy rotation
+    public SpriteRenderer cursprite;
+    public Sprite[] sprites;
+    //0 = back 1 = right 2 = front 3 = left
+
     private void Start()
     {
         //i dont know why setting biterange here works but im not complaining
@@ -30,12 +35,13 @@ public class captain : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<player>(); 
         playerPos = GameObject.FindWithTag("Player").GetComponent<player>().transform;
         rb2d = GetComponent<Rigidbody2D>();
+        cursprite = GetComponent<SpriteRenderer>();
+
 
         //set tentacle to inactive until it's needed to attack
         tentacle = GameObject.Find("tentacle");
         tentacle.SetActive(false);
 
-        //set water stuff
         
     }
 
@@ -46,7 +52,7 @@ public class captain : MonoBehaviour
         { inRange = true; }
     }
 
-    public void move()
+    public void move(float spd)
     {
         
         //get the player's location
@@ -54,13 +60,34 @@ public class captain : MonoBehaviour
 
         //shimmy the captain towards the player
         //param 1 takes current position, param 2 takes player position, param 3 is movement speed
-        rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, target, speed * Time.deltaTime));
+        rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, target, spd * Time.deltaTime));
+        facing();
 
         if (Vector2.Distance(playerPos.position, rb2d.position) < biteRange)
         { inRange = true; }
         else
         { inRange = false; }
 
+    }
+
+    public void facing()
+    {
+        //get distance between enemy and player
+        Vector2 dist = player.transform.position - transform.position;
+        //get the angle
+        float angle = Mathf.Atan2(dist.y, dist.x) * Mathf.Rad2Deg;
+
+        print(angle);
+
+        //decide which way the captain is facing
+        if (angle >= 45 && angle <= 135)
+        { cursprite.sprite = sprites[0]; }
+        else if (angle >= -135 && angle <= -45)
+        { cursprite.sprite = sprites[2]; }
+        else if (angle <= 45 && angle >= -45)
+        { cursprite.sprite = sprites[1]; }
+        else if (angle >= 135 || angle <= -135)
+        { cursprite.sprite = sprites[3]; }
     }
 
     public void bite()

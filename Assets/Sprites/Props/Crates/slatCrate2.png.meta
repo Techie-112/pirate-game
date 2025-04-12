@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: e5dc18034c5fa3543bb7a4e8c19bc912
+guid: e28e155c431bc874e8d63f1a0e3206b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6687005033507569905
-    second: captainSide_0
-  - first:
-      213: -7896771142852708272
-    second: captainSide_1
-  - first:
-      213: -2682054924335109141
-    second: captainSide_2
+      213: 6435804764170728506
+    second: slatCrate2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: captainSide_0
+      name: slatCrate2_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 23
-        width: 92
-        height: 109
+        x: 32
+        y: 21
+        width: 1042
+        height: 1042
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f0c77116a30dcc50800000000000000
-      internalID: 6687005033507569905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: captainSide_1
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 126
-        width: 55
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 05875b50c78096290800000000000000
-      internalID: -7896771142852708272
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: captainSide_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 9
-        width: 28
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: beb2be6a14d67cad0800000000000000
-      internalID: -2682054924335109141
+      spriteID: a34b92ca552905950800000000000000
+      internalID: 6435804764170728506
       vertices: []
       indices: 
       edges: []
@@ -184,10 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      captainSide_0: 6687005033507569905
-      captainSide_1: -7896771142852708272
-      captainSide_2: -2682054924335109141
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

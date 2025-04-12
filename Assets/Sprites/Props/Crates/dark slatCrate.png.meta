@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8309136ee3d042b4bb707e361a34c416
+guid: 2a87c7ef6c2a89f4eb135fd9ba8ea551
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4215965772510931181
-    second: captainBack_0
+      213: -7883105502199669426
+    second: dark slatCrate_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: captainBack_0
+      name: dark slatCrate_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 17
-        width: 75
-        height: 155
+        x: 28
+        y: 14
+        width: 1054
+        height: 1054
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 317d7409771ed75c0800000000000000
-      internalID: -4215965772510931181
+      spriteID: e4d167eef45999290800000000000000
+      internalID: -7883105502199669426
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      captainBack_0: -4215965772510931181
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

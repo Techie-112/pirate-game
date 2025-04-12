@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e0c3e8ba091b47141a365be5197df313
+guid: d7a543d46252df24ea253d4622b308ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1514552233022903516
-    second: bulletright_0
+      213: -3628958444725505737
+    second: moss ropeCrate_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bulletright_0
+      name: moss ropeCrate_0
       rect:
         serializedVersion: 2
-        x: 193
-        y: 881
-        width: 706
-        height: 231
+        x: 46
+        y: 0
+        width: 1023
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd4da134b35c40510800000000000000
-      internalID: 1514552233022903516
+      spriteID: 7317b75858953adc0800000000000000
+      internalID: -3628958444725505737
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      bulletright_0: 1514552233022903516
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

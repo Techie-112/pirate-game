@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: e0c3e8ba091b47141a365be5197df313
+guid: 14cc7ad1d502d02498e46cc36dd9092a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1514552233022903516
-    second: bulletright_0
+      213: 1238906131260488619
+    second: hidey hole_0
+  - first:
+      213: 1986875930053599376
+    second: hidey hole_1
+  - first:
+      213: -5685567140273706831
+    second: hidey hole_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +106,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bulletright_0
+      name: hidey hole_0
       rect:
         serializedVersion: 2
-        x: 193
-        y: 881
-        width: 706
-        height: 231
+        x: 164
+        y: 1531
+        width: 836
+        height: 389
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd4da134b35c40510800000000000000
-      internalID: 1514552233022903516
+      spriteID: babb5d7ff8a713110800000000000000
+      internalID: 1238906131260488619
       vertices: []
       indices: 
       edges: []
@@ -125,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 830df4c5122f5ac4f8a70679ec3dca60
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +141,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bulletright_0: 1514552233022903516
+      hidey hole_3: -1514621191
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
