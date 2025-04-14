@@ -1,8 +1,11 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
 using System;
 using static UnityEngine.EventSystems.EventTrigger;
 using System.Runtime.CompilerServices;
+using static UnityEngine.GraphicsBuffer;
 
 public class ranged_enemy : MonoBehaviour
 {
@@ -11,15 +14,12 @@ public class ranged_enemy : MonoBehaviour
     private Vector2 direction;
     private Rigidbody2D rb2d;
     private bool can_move = true;
-    public float targetTime = 120.0f;
+    public float targetTime = 2.0f;
     public GameObject Bullet;
     private float angle;
 
-
-    private SpriteRenderer cursprite;
     [SerializeField] Sprite[] sprites;
-    //0 = back 1 = right 2 = front 3 = left
-
+    private SpriteRenderer cursprite;
 
     //reference to wavespawner
     wavespawner ws;
@@ -43,9 +43,9 @@ public class ranged_enemy : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         rb2d = GetComponent<Rigidbody2D>();
-        cursprite = GetComponent<SpriteRenderer>();
 
         ws = GameObject.FindWithTag("ws").GetComponent<wavespawner>();
+        cursprite = GetComponent<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
@@ -57,7 +57,14 @@ public class ranged_enemy : MonoBehaviour
     void Update()
     {
 
-        facing();
+        if (rb2d.linearVelocityX > rb2d.linearVelocityY && rb2d.linearVelocityX > 0)
+        { cursprite.sprite = sprites[0]; }
+        else if (rb2d.linearVelocityY < rb2d.linearVelocityX && rb2d.linearVelocityY < 0)
+        { cursprite.sprite = sprites[2]; }
+        else if (rb2d.linearVelocityX < rb2d.linearVelocityY && rb2d.linearVelocityX > 0)
+        { cursprite.sprite = sprites[1]; }
+        else if (rb2d.linearVelocityX < rb2d.linearVelocityY && rb2d.linearVelocityX > 0)
+        { cursprite.sprite = sprites[3]; }
 
     }
 
@@ -67,7 +74,7 @@ public class ranged_enemy : MonoBehaviour
 
         angle = Mathf.Atan2(direction.x, direction.y);
         //get angle between current rotation and targets position
-        Quaternion Target_rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //Quaternion Target_rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         //rotate towards the target
         //transform.right = Player.position - transform.position;
@@ -83,7 +90,7 @@ public class ranged_enemy : MonoBehaviour
 
         if (targetTime <= 0.00)
         {
-            targetTime = 3.5f;
+            targetTime = 2f;
             shoot();
         }
 
