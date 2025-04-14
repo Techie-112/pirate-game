@@ -11,9 +11,11 @@ public class ranged_enemy : MonoBehaviour
     private Vector2 direction;
     private Rigidbody2D rb2d;
     private bool can_move = true;
-    public float targetTime = 120.0f;
+    public float targetTime = 2.0f;
     public GameObject Bullet;
     private float angle;
+    [SerializeField] Sprite[] sprites;
+    private SpriteRenderer cursprite;
 
     //reference to wavespawner
     wavespawner ws;
@@ -25,6 +27,7 @@ public class ranged_enemy : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
 
         ws = GameObject.FindWithTag("ws").GetComponent<wavespawner>();
+        cursprite = GetComponent<SpriteRenderer>();
 
     }
 
@@ -32,7 +35,14 @@ public class ranged_enemy : MonoBehaviour
     void Update()
     {
 
-        //get target position difference
+        if (rb2d.linearVelocityX > rb2d.linearVelocityY && rb2d.linearVelocityX > 0)
+        { cursprite.sprite = sprites[0]; }
+        else if (rb2d.linearVelocityY < rb2d.linearVelocityX && rb2d.linearVelocityY < 0)
+        { cursprite.sprite = sprites[2]; }
+        else if (rb2d.linearVelocityX < rb2d.linearVelocityY && rb2d.linearVelocityX > 0)
+        { cursprite.sprite = sprites[1]; }
+        else if (rb2d.linearVelocityX < rb2d.linearVelocityY && rb2d.linearVelocityX > 0)
+        { cursprite.sprite = sprites[3]; }
 
     }
 
@@ -58,7 +68,7 @@ public class ranged_enemy : MonoBehaviour
 
         if (targetTime <= 0.00)
         {
-            targetTime = 120f;
+            targetTime = 2f;
             shoot();
         }
 

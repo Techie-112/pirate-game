@@ -133,6 +133,11 @@ MonoBehaviour:
   speed: 0.3
   targetTime: 2
   Bullet: {fileID: 3635796018670090073, guid: 57b8bed2308b1be41b21263eb6e59648, type: 3}
+  sprites:
+  - {fileID: 628698754550796520, guid: b2e77b989e31c1943916282e73ea248e, type: 3}
+  - {fileID: -8013969298054309724, guid: 07f15389e1b29f44da5d232925be1cbf, type: 3}
+  - {fileID: -5974996467096538334, guid: 24e040972ec3b2d4a9dadf068f60fb29, type: 3}
+  - {fileID: 8454742304806799558, guid: 4d17aa0b0c5eb6d43ba5618d8d98456d, type: 3}
 --- !u!70 &1087307493395461511
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
