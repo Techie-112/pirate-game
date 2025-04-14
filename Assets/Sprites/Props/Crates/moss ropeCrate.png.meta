@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      moss ropeCrate_0: -3628958444725505737
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

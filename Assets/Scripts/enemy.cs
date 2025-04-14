@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System;
 using static UnityEngine.EventSystems.EventTrigger;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class enemy : MonoBehaviour
 {
@@ -34,6 +36,9 @@ public class enemy : MonoBehaviour
 
     //reference to wavespawner
     wavespawner ws;
+
+    //reference to ui to add score
+
 
     Vector2 Current_velocity;
 
@@ -79,6 +84,11 @@ public class enemy : MonoBehaviour
                 enemy EnemyScript = collision.gameObject.GetComponent<enemy>();
                 EnemyScript.Die(); //kills the other enemy that its collieded
             }
+            else if (collision.gameObject.tag == "Ranged_enemy")
+            {
+                ranged_enemy rangedEnemy = collision.gameObject.GetComponent<ranged_enemy>();
+                rangedEnemy.Die(); //kills the other enemy that its collieded
+            }
         }
 
 
@@ -88,6 +98,8 @@ public class enemy : MonoBehaviour
     public void Die()
     {
         currentState = EnemyState.Dying;
+        // Add 100 points to the score
+        UIscript.Instance.AddScore(100);
 
         // Turn red
         cursprite.color = Color.red;
