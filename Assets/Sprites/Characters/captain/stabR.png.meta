@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: be2c0608986586e47a743fc5c963ac6b
+guid: b96d140cbaa6090418a6dc4ffb520599
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1024871151488657658
-    second: pirateprotagright_0
+      213: -3029166651351263656
+    second: stabR_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pirateprotagright_0
+      name: stabR_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 671
-        height: 922
+        x: 664
+        y: 314
+        width: 921
+        height: 423
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60719f22e1de6c1f0800000000000000
-      internalID: -1024871151488657658
+      spriteID: 8569fb4dafc36f5d0800000000000000
+      internalID: -3029166651351263656
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8b495763a9904704cbf15c8a5b496947
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pirateprotagright_0: -1024871151488657658
+      stabR_0: -3029166651351263656
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

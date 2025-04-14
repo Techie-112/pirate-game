@@ -11,7 +11,7 @@ public class captain : MonoBehaviour
     public float atkRange;
 
     //animator
-    Animator anim;
+    public Animator anim;
 
 
     //references to other objects
@@ -23,6 +23,7 @@ public class captain : MonoBehaviour
     //other captain objects
     public waterboarding water;
     Vector3 waterpos;
+    public GameObject tentacle;
     public spit spitball;
 
 
@@ -30,7 +31,7 @@ public class captain : MonoBehaviour
     private void Start()
     {
         //i dont know why setting the attack range here works but im not complaining
-        atkRange = 1.1f;
+        atkRange = 1.25f;
 
         //find the other gameobjects
         player = GameObject.FindWithTag("Player").GetComponent<player>();
@@ -90,13 +91,8 @@ public class captain : MonoBehaviour
 
     public void stab()
     {
-        //player is on left if this is less than zero
-
-        if (inRange)
-        {
-            player.TakeDamage();
-            //tentacle.SetActive(false);
-        }
+        tentacle.SetActive(true);
+        
     }
 
     //literally just copy pasting the ranged enemy attack

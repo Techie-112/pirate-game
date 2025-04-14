@@ -1,11 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class spit : MonoBehaviour
 {
     public float muzzle_velocity = 10f;
-    private Rigidbody2D rgbd2D;
     private Vector2 direction;
-    public float angle;
+    Vector3 startPoint;
     public player player;
     public Transform target;
     public puddle puddle;
@@ -14,17 +14,20 @@ public class spit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rgbd2D = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<player>();
+        startPoint = transform.position;
         target = player.transform;
         direction = (target.position - transform.position);
     }
 
     void FixedUpdate()
     {
-        //rgbd2D.linearVelocity = transform.TransformDirection(direction);
-
         transform.position = Vector2.MoveTowards(transform.position, direction, muzzle_velocity * Time.deltaTime);
+        if (Vector3.Dot((target.position - startPoint).normalized, (transform.position - target.position).normalized) > 0) 
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
 
@@ -44,6 +47,7 @@ public class spit : MonoBehaviour
 
     private void OnDestroy()
     {
+        
         Instantiate(puddle, transform.position, Quaternion.identity);        
     }
 }
