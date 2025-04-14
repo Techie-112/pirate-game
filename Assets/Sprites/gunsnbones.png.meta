@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gunsnbones_0: -5719560100979245151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

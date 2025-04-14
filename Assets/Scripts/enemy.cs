@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using static UnityEngine.EventSystems.EventTrigger;
+using UnityEngine.UIElements;
 
 public class enemy : MonoBehaviour
 {
@@ -78,6 +79,11 @@ public class enemy : MonoBehaviour
                 // gets the script of the enemy it collided. this might be redundant idk
                 enemy EnemyScript = collision.gameObject.GetComponent<enemy>();
                 EnemyScript.Die(); //kills the other enemy that its collieded
+            }
+            else if (collision.gameObject.tag == "Ranged_enemy")
+            {
+                ranged_enemy rangedEnemy = collision.gameObject.GetComponent<ranged_enemy>();
+                rangedEnemy.Die(); //kills the other enemy that its collieded
             }
         }
 
