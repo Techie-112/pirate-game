@@ -17,7 +17,7 @@ public class bullet : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         direction = (Player.position - transform.position).normalized;
         angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
     void FixedUpdate()

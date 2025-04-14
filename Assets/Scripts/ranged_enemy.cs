@@ -42,10 +42,10 @@ public class ranged_enemy : MonoBehaviour
 
         angle = Mathf.Atan2(direction.x, direction.y);
         //get angle between current rotation and targets position
-        Quaternion Target_rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //Quaternion Target_rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         //rotate towards the target
-        transform.right = Player.position - transform.position;
+        //transform.right = Player.position - transform.position;
 
         targetTime -= Time.deltaTime;
 

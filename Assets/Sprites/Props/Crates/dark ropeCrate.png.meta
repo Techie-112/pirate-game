@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dark ropeCrate_0: -2050536181689951006
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
