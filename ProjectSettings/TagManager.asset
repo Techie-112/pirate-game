@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - Destructible
   - ws
+  - captain
   layers:
   - Default
   - TransparentFX

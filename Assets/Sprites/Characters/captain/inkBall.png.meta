@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1e3505447eb0b9343a9ee5579c99a78b
+guid: e862acbbadb0fe34c8e91cc9957ef1d5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4320019893630987540
-    second: captainSpit_0
+      213: 9028804786138122035
+    second: inkBall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: captainSpit_0
+      name: inkBall_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 17
-        width: 75
-        height: 155
+        x: 0
+        y: 0
+        width: 202
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 41dee7e643bc3fb30800000000000000
-      internalID: 4320019893630987540
+      spriteID: 3370c18cd12cc4d70800000000000000
+      internalID: 9028804786138122035
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      captainSpit_0: 4320019893630987540
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

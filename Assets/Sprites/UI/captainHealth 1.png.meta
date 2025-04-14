@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0c413cf66b4e616429bf6b2d9b6f9186
+guid: 543f59a3b13374e499a61c96cf460a8d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8529283976462131562
-    second: captainChase_0
+      213: -3106344881260921187
+    second: captainHealth 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: captainChase_0
+      name: captainHealth 1_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 17
-        width: 75
-        height: 155
+        x: 0
+        y: 0
+        width: 655
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 69e1b8ad965e1a980800000000000000
-      internalID: -8529283976462131562
+      spriteID: d9ef692e9cb04e4d0800000000000000
+      internalID: -3106344881260921187
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      captainChase_0: -8529283976462131562
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -7,8 +8,11 @@ public class captain : MonoBehaviour
 
     //captain stats
     public bool inRange = false;
-    public float biteRange;
-    public float speed = 1.0f;
+    public float atkRange;
+
+    //animator
+    Animator anim;
+
 
     //references to other objects
     player player;
@@ -17,32 +21,31 @@ public class captain : MonoBehaviour
     Rigidbody2D rb2d;
 
     //other captain objects
-    public GameObject tentacle;
     public waterboarding water;
-    public Transform[] waterpos;
+    Vector3 waterpos;
+    public spit spitball;
 
-    //variables related to enemy rotation
-    public SpriteRenderer cursprite;
-    public Sprite[] sprites;
-    //0 = back 1 = right 2 = front 3 = left
+
 
     private void Start()
     {
-        //i dont know why setting biterange here works but im not complaining
-        biteRange = 1.0f;
+        //i dont know why setting the attack range here works but im not complaining
+        atkRange = 1.1f;
 
         //find the other gameobjects
-        player = GameObject.FindWithTag("Player").GetComponent<player>(); 
-        playerPos = GameObject.FindWithTag("Player").GetComponent<player>().transform;
+        player = GameObject.FindWithTag("Player").GetComponent<player>();
+        playerPos = player.transform;
+
         rb2d = GetComponent<Rigidbody2D>();
-        cursprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        waterpos = new Vector3(0,3f,0f);
 
+    }
 
-        //set tentacle to inactive until it's needed to attack
-        tentacle = GameObject.Find("tentacle");
-        tentacle.SetActive(false);
-
-        
+    private void Update()
+    {
+        anim.SetFloat("targX", player.transform.position.x);
+        anim.SetFloat("targY", player.transform.position.y);
     }
 
 
@@ -52,7 +55,13 @@ public class captain : MonoBehaviour
         { inRange = true; }
     }
 
-    public void move(float spd)
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject == player)
+        { inRange = false; }
+    }
+
+    public void chase(float spd)
     {
         
         //get the player's location
@@ -61,82 +70,49 @@ public class captain : MonoBehaviour
         //shimmy the captain towards the player
         //param 1 takes current position, param 2 takes player position, param 3 is movement speed
         rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, target, spd * Time.deltaTime));
-        facing();
 
-        if (Vector2.Distance(playerPos.position, rb2d.position) < biteRange)
+        if (Vector2.Distance(playerPos.position, rb2d.position) < atkRange)
         { inRange = true; }
         else
         { inRange = false; }
 
     }
 
-    public void facing()
-    {
-        //get distance between enemy and player
-        Vector2 dist = player.transform.position - transform.position;
-        //get the angle
-        float angle = Mathf.Atan2(dist.y, dist.x) * Mathf.Rad2Deg;
+    //when the animations are done ill fuse the bite & stab together to create one "damage player"
 
-        print(angle);
-
-        //decide which way the captain is facing
-        if (angle >= 45 && angle <= 135)
-        { cursprite.sprite = sprites[0]; }
-        else if (angle >= -135 && angle <= -45)
-        { cursprite.sprite = sprites[2]; }
-        else if (angle <= 45 && angle >= -45)
-        { cursprite.sprite = sprites[1]; }
-        else if (angle >= 135 || angle <= -135)
-        { cursprite.sprite = sprites[3]; }
-    }
-
-    public void bite()
+    public void damagePlayer()
     {
         if (inRange)
         {
-            player.currentLives = 0;
+            player.TakeDamage();
         }
     }
 
     public void stab()
     {
         //player is on left if this is less than zero
-        if (player.transform.position.x - transform.position.x < 0)
-        { tentacle.transform.localScale = new Vector3(-2.5f, 1f, 1f); }
-        //otherwise they are on right
-        else
-        { tentacle.transform.localScale = new Vector3(2.5f, 1f, 1f); }
-
-        
-        tentacle.SetActive(true);
 
         if (inRange)
         {
-            player.currentLives--;
+            player.TakeDamage();
             //tentacle.SetActive(false);
         }
     }
-    public void swing()
-    {
-        //for some reason swing isnt working so that's inconvenient
-        print("beepboop");
-        //if the player is above the enemy, swing upwards
-        if (player.transform.position.y > transform.position.y)
-        {
-            tentacle.transform.Rotate(new Vector3(0f, 0f, 90f));
-        }
-        //otherwise swing downwards
-        else
-        {
-            tentacle.transform.Rotate(new Vector3(0f, 0f, -90f));
-        }
 
-        tentacle.SetActive(false);
+    //literally just copy pasting the ranged enemy attack
+    public void shoot()
+    {
+
+        Debug.Log("pewpew");
+        Instantiate(spitball, transform.position, Quaternion.identity);
     }
+
 
     public void woosh()
     {
-        Transform randomPoint = waterpos[Random.Range(0, waterpos.Length)];
-        Instantiate(water, randomPoint.position, Quaternion.identity);
+
+        Instantiate(water, waterpos, transform.rotation);
+
+        anim.SetTrigger("waterboard");
     }
 }
