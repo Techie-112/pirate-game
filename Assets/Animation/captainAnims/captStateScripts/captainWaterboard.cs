@@ -16,6 +16,5 @@ public class captainWaterboard : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetInteger("curState", 0);
-
     }
 }

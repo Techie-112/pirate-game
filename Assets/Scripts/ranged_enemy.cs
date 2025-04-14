@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class ranged_enemy : MonoBehaviour
 {
@@ -15,6 +11,11 @@ public class ranged_enemy : MonoBehaviour
     public GameObject Bullet;
     private float angle;
 
+    private SpriteRenderer cursprite;
+    [SerializeField] Sprite[] sprites;
+    //0 = back 1 = right 2 = front 3 = left
+
+
     //reference to wavespawner
     wavespawner ws;
 
@@ -23,6 +24,7 @@ public class ranged_enemy : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         rb2d = GetComponent<Rigidbody2D>();
+        cursprite = GetComponent<SpriteRenderer>();
 
         ws = GameObject.FindWithTag("ws").GetComponent<wavespawner>();
 
@@ -32,7 +34,7 @@ public class ranged_enemy : MonoBehaviour
     void Update()
     {
 
-        //get target position difference
+        facing();
 
     }
 
@@ -81,5 +83,35 @@ public class ranged_enemy : MonoBehaviour
         // create projectile with ranged enemies position and rotation 
         //Quaternion bulletRotation = transform.rotation * Quaternion.Euler(0, 0, 90);
         Instantiate(Bullet, transform.position + (transform.right * 1.5f), transform.rotation);
+    }
+
+    void facing()
+    {
+        if (rb2d.linearVelocityX > rb2d.linearVelocityY)
+        {
+            if (rb2d.linearVelocityX >= 0)
+            {
+                //going right
+                cursprite.sprite = sprites[1];
+            }
+            else
+            {
+                //going left
+                cursprite.sprite = sprites[3];
+            }
+        }
+        else
+        {
+            if (rb2d.linearVelocityY >= 0)
+            {
+                //going up
+                cursprite.sprite = sprites[0];
+            }
+            else
+            {
+                //going down
+                cursprite.sprite = sprites[2];
+            }
+        }
     }
 }

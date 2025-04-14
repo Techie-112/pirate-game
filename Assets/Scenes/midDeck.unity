@@ -3103,8 +3103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemyList:
-    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
-    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
+    - {fileID: 3445497189906097760, guid: e4e1bd4ca7f3e844e97cce170fa65d6b, type: 3}
     enemyIndex: 0
     enemyInterval: 2
     spawnInterval: 4
@@ -3203,12 +3202,24 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2704343360231732732, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704343360231732732, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704343360231732732, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704343360231732732, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.32
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 2704343360231732732, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: 2704343360231732732, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3248,11 +3259,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5043806956590312475, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6014469362321830031, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
-      propertyPath: Force
-      value: 10
+    - target: {fileID: 5049121548417071861, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 149531941}
+    - target: {fileID: 5049121548417071861, guid: f8ca78cd164ce184bae8ebb1c370013b, type: 3}
+      propertyPath: fRadius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

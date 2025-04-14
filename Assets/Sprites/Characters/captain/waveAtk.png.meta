@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2fa1ed25d3106b7448c53ccc93229e84
+guid: d9b9d2378d1c64c49b47d19a37a29363
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2800029079196746243
-    second: captainWaves_0
+      213: 7045915178284380694
+    second: waveAtk_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: captainWaves_0
+      name: waveAtk_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 17
-        width: 75
-        height: 155
+        x: 28
+        y: 13
+        width: 2874
+        height: 1061
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3024942cc93bbd620800000000000000
-      internalID: 2800029079196746243
+      spriteID: 6127c27168e18c160800000000000000
+      internalID: 7045915178284380694
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      captainWaves_0: 2800029079196746243
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

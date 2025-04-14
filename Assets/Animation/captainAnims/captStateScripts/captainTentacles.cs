@@ -13,7 +13,7 @@ public class captainTentacles : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        captain.stab();
 
     }
 
@@ -21,6 +21,5 @@ public class captainTentacles : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetInteger("curState", 3);
-
     }
 }
