@@ -10,6 +10,7 @@ public class bullet : MonoBehaviour
     public float angle;
     public Transform player;
 
+    public GameObject shooter; // Assign this when instantiating
 
     // Start is called before the first frame update
     void Start()
@@ -33,18 +34,25 @@ public class bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Ranged_enemy" || collision.gameObject.tag != "Wall")
+        if (collision.gameObject != shooter || collision.gameObject.tag != "Wall")
         {
             if (collision.gameObject.tag == "Player")
             {
                 player playerScript = collision.gameObject.GetComponent<player>();
                 playerScript.TakeDamage();
             }
-            else
+            else if (collision.gameObject.tag == "Enemy")
             {
-            Destroy(collision.gameObject);
+                enemy EnemyScript = collision.gameObject.GetComponent<enemy>();
+                EnemyScript.Die(); //kills the other enemy that its collieded
+            }
+            else if (collision.gameObject.tag == "Ranged_enemy")
+            {
+                ranged_enemy rangedEnemy = collision.gameObject.GetComponent<ranged_enemy>();
+                rangedEnemy.Die(); //kills the other enemy that its collieded
             }
         }
         Destroy(gameObject);
+        Debug.Log("bullet collided with: " + collision.gameObject.name);
     }
 }
