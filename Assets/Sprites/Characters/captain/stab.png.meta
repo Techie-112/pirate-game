@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5fb80b9a2103be748befda45ad7873f0
+guid: 2c6244508f36d29488073af1a788370d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -411318528571352220
-    second: captainTentacles_0
+      213: -836089490739333967
+    second: stab_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: captainTentacles_0
+      name: stab_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 17
-        width: 75
-        height: 155
+        x: 614
+        y: 352
+        width: 953
+        height: 415
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46bd7fe3af3ba4af0800000000000000
-      internalID: -411318528571352220
+      spriteID: 1b47b08b90d9564f0800000000000000
+      internalID: -836089490739333967
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7d26572ea9b21064382e628a6fa097c4
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      captainTentacles_0: -411318528571352220
+      stab_0: -836089490739333967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

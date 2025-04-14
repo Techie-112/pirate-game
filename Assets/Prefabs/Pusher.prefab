@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6014469362321830031}
   - component: {fileID: 5228663928188349494}
   - component: {fileID: 5049121548417071861}
+  - component: {fileID: 560222594398375766}
   m_Layer: 6
   m_Name: Pusher
   m_TagString: Untagged
@@ -163,3 +164,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   fRadius: 0.5
+--- !u!114 &560222594398375766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043806956590312475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213ef206e2e4a064c921634805e35070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 10

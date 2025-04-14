@@ -2,23 +2,31 @@ using UnityEngine;
 
 public class puddle : MonoBehaviour
 {
-    player player;
-    public Transform respawnPoint;
+    public player player;
+    public captain captain;
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<player>();
+        captain = GameObject.FindWithTag("captain").GetComponent<captain>();
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject == player) 
-        { 
-            player.TakeDamage();
+        if (collision.gameObject.tag != "wall")
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                player.TakeDamage();
+            }
+            else if (collision.gameObject.tag == "captain")
+            {
+                //captain takes damage;
+            }
+            else if (collision.gameObject.tag == null)
+            {
+                Destroy(gameObject);
+            }
         }
+        
     }
 }

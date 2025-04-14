@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Push_enemies : MonoBehaviour
 {
-    private bool in_range = false;
+    bool in_range = false;
     private Rigidbody2D enemyRB;
 
     public float Force = 500f;

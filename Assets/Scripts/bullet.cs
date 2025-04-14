@@ -17,14 +17,12 @@ public class bullet : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         direction = (Player.position - transform.position).normalized;
         angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
     void FixedUpdate()
     {
-        //rgbd2D.linearVelocity = transform.TransformDirection(direction);
-
-        transform.position = Vector2.MoveTowards(transform.position, direction, muzzle_velocity * Time.deltaTime);
+        rgbd2D.linearVelocity = transform.TransformDirection(Vector3.right) * muzzle_velocity;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

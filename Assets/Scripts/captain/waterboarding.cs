@@ -25,12 +25,4 @@ public class waterboarding : MonoBehaviour
 
         return offScreen;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<puddle>())
-        {
-            Destroy(collision.gameObject);
-        }
-    }
 }
