@@ -11,6 +11,9 @@ TagManager:
   - Destructible
   - ws
   - captain
+  - UI
+  - UI Tag
+  - UItag
   layers:
   - Default
   - TransparentFX

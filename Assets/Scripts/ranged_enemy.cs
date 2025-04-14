@@ -151,6 +151,8 @@ public class ranged_enemy : MonoBehaviour
     public void Die()
     {
         currentState = EnemyState.Dying;
+        // Add 100 points to the score
+        UIscript.Instance.AddScore(100);
 
         // Turn red
         cursprite.color = Color.red;

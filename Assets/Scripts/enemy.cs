@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using static UnityEngine.EventSystems.EventTrigger;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class enemy : MonoBehaviour
 {
@@ -35,6 +36,9 @@ public class enemy : MonoBehaviour
 
     //reference to wavespawner
     wavespawner ws;
+
+    //reference to ui to add score
+
 
     Vector2 Current_velocity;
 
@@ -94,6 +98,8 @@ public class enemy : MonoBehaviour
     public void Die()
     {
         currentState = EnemyState.Dying;
+        // Add 100 points to the score
+        UIscript.Instance.AddScore(100);
 
         // Turn red
         cursprite.color = Color.red;
