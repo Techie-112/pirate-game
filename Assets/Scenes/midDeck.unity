@@ -3104,8 +3104,23 @@ MonoBehaviour:
   waves:
   - enemyList:
     - {fileID: 3445497189906097760, guid: e4e1bd4ca7f3e844e97cce170fa65d6b, type: 3}
+    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
+    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
+    - {fileID: 3445497189906097760, guid: e4e1bd4ca7f3e844e97cce170fa65d6b, type: 3}
+    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
+    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
     enemyIndex: 0
-    enemyInterval: 2
+    enemyInterval: 3
+    spawnInterval: 4
+  - enemyList:
+    - {fileID: 3445497189906097760, guid: e4e1bd4ca7f3e844e97cce170fa65d6b, type: 3}
+    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
+    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
+    - {fileID: 3445497189906097760, guid: e4e1bd4ca7f3e844e97cce170fa65d6b, type: 3}
+    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
+    - {fileID: 260159919915242125, guid: 3881740094b01f94eb5864184aa0209f, type: 3}
+    enemyIndex: 0
+    enemyInterval: 3
     spawnInterval: 4
   spawnpoints:
   - {fileID: 1493215221}
