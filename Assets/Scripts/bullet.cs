@@ -15,7 +15,14 @@ public class bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Ignore collision between bullet and shooter
+        Collider2D bulletCol = GetComponent<Collider2D>();
+        Collider2D shooterCol = shooter.GetComponent<Collider2D>();
+
+        if (bulletCol != null && shooterCol != null)
+        {
+            Physics2D.IgnoreCollision(bulletCol, shooterCol);
+        }
     }
 
     void FixedUpdate()
@@ -32,7 +39,7 @@ public class bullet : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,0,angle);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject != shooter || collision.gameObject.tag != "Wall")
         {
@@ -46,13 +53,39 @@ public class bullet : MonoBehaviour
                 enemy EnemyScript = collision.gameObject.GetComponent<enemy>();
                 EnemyScript.Die(); //kills the other enemy that its collieded
             }
-            else if (collision.gameObject.tag == "Ranged_enemy")
+            else if (collision.gameObject.tag == "Ranged_enemy" && collision.gameObject != shooter)
             {
                 ranged_enemy rangedEnemy = collision.gameObject.GetComponent<ranged_enemy>();
                 rangedEnemy.Die(); //kills the other enemy that its collieded
             }
         }
-        Destroy(gameObject);
+        Destroy(gameObject); 
+        Debug.Log("bullet collided with: " + collision.gameObject.name);
+    }*/
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject != shooter || collision.gameObject.tag != "Wall")
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                player playerScript = collision.gameObject.GetComponent<player>();
+                playerScript.TakeDamage();
+            }
+            else if (collision.gameObject.tag == "Enemy")
+            {
+                enemy EnemyScript = collision.gameObject.GetComponent<enemy>();
+                EnemyScript.Die(); //kills the other enemy that its collieded
+            }
+            else if (collision.gameObject.tag == "Ranged_enemy" && collision.gameObject != shooter)
+            {
+                ranged_enemy rangedEnemy = collision.gameObject.GetComponent<ranged_enemy>();
+                rangedEnemy.Die(); //kills the other enemy that its collieded
+            }
+        }
+        if (collision.gameObject != shooter)
+        {
+            Destroy(gameObject);
+        }
         Debug.Log("bullet collided with: " + collision.gameObject.name);
     }
 }

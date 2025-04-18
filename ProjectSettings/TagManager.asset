@@ -51,6 +51,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: gun
+    uniqueID: 2143471001
+    locked: 0
+  - name: boss
+    uniqueID: 646435059
+    locked: 0
   - name: Sails
     uniqueID: 2116289453
     locked: 0

@@ -14,9 +14,10 @@ public class ranged_enemy : MonoBehaviour
     private Vector2 direction;
     private Rigidbody2D rb2d;
     private bool can_move = true;
-    public float targetTime = 2.0f;
+    public float targetTime;
     public GameObject Bullet;
     private float angle;
+    private float initialTargetTime;
 
     [SerializeField] Sprite[] sprites;
     private SpriteRenderer cursprite;
@@ -37,10 +38,17 @@ public class ranged_enemy : MonoBehaviour
     private enum EnemyState { Approaching, Pausing, Charging, Cooldown, Dying }
     private EnemyState currentState = EnemyState.Approaching;
 
+    //flash white
+    private Renderer spriteRenderer;
+    private Color originalColor;
+    public Material flashMaterial;
+    private Material originalMaterial;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         rb2d = GetComponent<Rigidbody2D>();
 
@@ -51,6 +59,10 @@ public class ranged_enemy : MonoBehaviour
         target = GameObject.FindWithTag("Player").transform;
         ws = GameObject.FindWithTag("ws").GetComponent<wavespawner>();
 
+        initialTargetTime = targetTime;
+
+        originalColor = cursprite.color;
+        originalMaterial = cursprite.material;
     }
 
     // Update is called once per frame
@@ -66,6 +78,18 @@ public class ranged_enemy : MonoBehaviour
         else if (rb2d.linearVelocityX < rb2d.linearVelocityY && rb2d.linearVelocityX > 0)
         { cursprite.sprite = sprites[3]; }
 
+        targetTime -= Time.deltaTime;
+
+        if (targetTime <= 0.00)
+        {
+            targetTime = initialTargetTime; //reset timer           
+            StartCoroutine(FlashAndFire());
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            cursprite.color = Color.white;
+        }
     }
 
     private void FixedUpdate()
@@ -79,7 +103,6 @@ public class ranged_enemy : MonoBehaviour
         //rotate towards the target
         //transform.right = Player.position - transform.position;
 
-        targetTime -= Time.deltaTime;
 
         if (can_move)
         {
@@ -88,11 +111,7 @@ public class ranged_enemy : MonoBehaviour
         }
 
 
-        if (targetTime <= 0.00)
-        {
-            targetTime = 2f;
-            shoot();
-        }
+
 
         if (currentState == EnemyState.Approaching)
         {
@@ -120,6 +139,31 @@ public class ranged_enemy : MonoBehaviour
     {
         ws.enemiesLeft--;
     }
+    protected IEnumerator FlashWhite(float duration)
+    {
+        float ff = 3;
+        Debug.Log("Started Flash White");
+        cursprite.color = Color.cyan;
+        //its cyan because white doesnt work because it's already white. I am very mad about this
+        yield return new WaitForSeconds(duration);
+        cursprite.color = originalColor;
+    }
+    /*IEnumerator FlashWhiteMaterial(float duration = 0.1f)
+    {
+        spriteRenderer.material = flashMaterial;
+        yield return new WaitForSeconds(duration);
+        spriteRenderer.material = originalMaterial;
+    }
+    */
+    protected IEnumerator FlashAndFire()
+    {
+        Debug.Log("started F&F");
+        yield return StartCoroutine(FlashWhite(0.3f));
+        // StartCoroutine(FlashWhiteMaterial(0.5f));
+        // You can also play a wind-up animation here
+        yield return new WaitForSeconds(0.4f); // Delay before attack
+        shoot(); // Call your attack method
+    }
 
     public void shoot()
     {
@@ -127,7 +171,7 @@ public class ranged_enemy : MonoBehaviour
         Debug.Log("Fired");
         // create projectile with ranged enemies position and rotation 
         //Quaternion bulletRotation = transform.rotation * Quaternion.Euler(0, 0, 90);
-        GameObject bullet = Instantiate(Bullet, transform.position + (transform.right * 1.5f), transform.rotation);
+        GameObject bullet = Instantiate(Bullet, transform.position /*+ (transform.right * 1.5f)*/, transform.rotation);
         bullet bulletScript = bullet.GetComponent<bullet>();
         bulletScript.shooter = gameObject; // Reference to the shooter
     }
