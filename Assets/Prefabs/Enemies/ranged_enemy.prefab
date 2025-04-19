@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   speed: 0.3
-  targetTime: 1.2
+  targetTime: 2
   Bullet: {fileID: 3635796018670090073, guid: 57b8bed2308b1be41b21263eb6e59648, type: 3}
   sprites:
   - {fileID: 8454742304806799558, guid: 4d17aa0b0c5eb6d43ba5618d8d98456d, type: 3}

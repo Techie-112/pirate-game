@@ -16,9 +16,13 @@ public class stairs : MonoBehaviour
     }
     private void Update()
     {
-        if (ws.enemiesLeft == 0 && ws.wavenum == ws.waves.Length)
+        if ((ws.enemiesLeft == 0 && ws.wavenum == ws.waves.Length))
         { canLeave = true; }
-
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            print("manually going next scene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {

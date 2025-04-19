@@ -5,6 +5,7 @@ public class HealthDisplay : MonoBehaviour
 {
 
     public Sprite empty;
+    public Sprite half;
     public Sprite full;
     public Image[] hearts;
 
@@ -17,19 +18,26 @@ public class HealthDisplay : MonoBehaviour
     }
     void Update()
     {
-
+        //local variable to be subtracted
+        int livesLeft = player.currentLives;
+        
+        //basically takes the 6 lives and divides them up between the hearts
         for (int i = 0; i < player.maxLives; i++)
         {
-            if (i < player.currentLives)
-            { hearts[i].overrideSprite = full; }
+            if (livesLeft >= 2)
+            {
+                hearts[i].sprite = full;
+                livesLeft -= 2;
+            }
+            else if (livesLeft == 1)
+            {
+                hearts[i].sprite = half;
+                livesLeft -= 1;
+            }
             else
-            { hearts[i].overrideSprite = empty; }
-
-            if (i < player.maxLives)
-            { hearts[i].enabled = true; }
-            else
-            { hearts[i].enabled = false; }
-
+            {
+                hearts[i].sprite = empty;
+            }
         }
 
     }
