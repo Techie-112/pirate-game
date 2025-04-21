@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using UnityEngine.UI;
 public class player : MonoBehaviour
 {
     public float speed = 5f;
@@ -21,12 +22,18 @@ public class player : MonoBehaviour
     private bool isInvincible = false;
 
     public UIscript UI;
+    public GameObject pushHitbox;
+    public float pushDuration = 0.3f;
+    public float pushCooldown = 8f; // in seconds
+    private bool canPush = true;
+    public Image pushIndicator; // drag your UI square here in the Inspector
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cursprite = GetComponent<SpriteRenderer>();
         UI = GameObject.FindGameObjectWithTag("UItag").GetComponent<UIscript>();
+        pushIndicator = GameObject.FindGameObjectWithTag("thesquare").GetComponent<Image>();
 
         currentLives = maxLives;
 
@@ -46,6 +53,29 @@ public class player : MonoBehaviour
             currentLives++;
             Debug.Log("current lives: " + currentLives);
         }
+        if (Input.GetMouseButtonDown(0) && canPush)
+        {
+            StartCoroutine(DoPush());
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            print("manually going next scene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
+    IEnumerator DoPush()
+    {
+        canPush = false;
+        pushIndicator.color = Color.black;
+
+        pushHitbox.SetActive(true);
+        yield return new WaitForSeconds(0.1f); // duration of push hitbox
+        pushHitbox.SetActive(false);
+
+        yield return new WaitForSeconds(pushCooldown); // cooldown period
+        canPush = true;
+        pushIndicator.color = Color.white;
     }
 
     void FixedUpdate()

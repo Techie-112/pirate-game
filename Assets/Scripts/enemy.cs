@@ -58,14 +58,9 @@ public class enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         if (currentState == EnemyState.Approaching)
         {
             ApproachPlayer();
-        }
-        else
-        {
-            //Debug.Log("currentState is: " +  currentState);
         }
     }
 
@@ -140,13 +135,6 @@ public class enemy : MonoBehaviour
 
     private void ApproachPlayer()
     {
-        /*this.angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        //get angle between current rotation and target position
-        Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        //rotate towards the target
-        this.transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed); */
-
         //get distance from player to this enemy
         float distance = Vector2.Distance(transform.position, target.position);
 
