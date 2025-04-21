@@ -647,7 +647,7 @@ SpriteRenderer:
   m_Size: {x: 0.05, y: 0.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &165429767
@@ -934,7 +934,7 @@ SpriteRenderer:
   m_Size: {x: 0.05, y: 0.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &446410581 stripped
@@ -2151,7 +2151,7 @@ SpriteRenderer:
   m_Size: {x: 0.05, y: 0.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1473327897 stripped
@@ -2305,7 +2305,7 @@ SpriteRenderer:
   m_Size: {x: 0.05, y: 0.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1507964001
@@ -2575,8 +2575,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9037038165837384181, guid: 17b150ee2997fc34b99cb1006f166a05, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2922,6 +2921,8 @@ MonoBehaviour:
   - {fileID: 160842793}
   wavenum: 0
   enemiesLeft: 0
+  puddle: {fileID: 2582739574025287212, guid: d9232c777da352b4d8c9dcfdff009fc4, type: 3}
+  nextPuddle: 1.5
 --- !u!4 &2080988269
 Transform:
   m_ObjectHideFlags: 0

@@ -27,6 +27,10 @@ public class wavespawner : MonoBehaviour
 
     public int enemiesLeft;
 
+    //puddle spawning things
+    public puddle puddle;
+    public float nextPuddle = 1.5f;
+
     private void Update()
     {
 
@@ -39,6 +43,8 @@ public class wavespawner : MonoBehaviour
                 spawnWave();
             }
         }
+
+        spawnPuddle();
     }
 
     private void spawnWave()
@@ -70,6 +76,19 @@ public class wavespawner : MonoBehaviour
         if (curwave.enemyIndex == curwave.enemyList.Length)
         {
             canSpawn = false;
+        }
+    }
+
+    private void spawnPuddle()
+    {
+        if (Time.time > nextPuddle)
+        {
+            float pudX = Random.Range(-6.5f, 6.5f);
+            float pudY = Random.Range(-4.5f, 2.5f);
+            Vector3 pudSpawn = new Vector3(pudX, pudY, 0.01f);
+
+            Instantiate(puddle, pudSpawn, Quaternion.identity);
+            nextPuddle = Time.time + Random.Range(4f, 10f);
         }
     }
 

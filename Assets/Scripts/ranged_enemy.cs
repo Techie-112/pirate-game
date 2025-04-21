@@ -10,7 +10,7 @@ using static UnityEngine.GraphicsBuffer;
 public class ranged_enemy : MonoBehaviour
 {
     public Transform Player;
-    public float speed = 0.3f;
+    public float speed = 5f;
     private Vector2 direction;
     private Rigidbody2D rb2d;
     private bool can_move = true;

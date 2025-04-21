@@ -22,7 +22,7 @@ public class Push_enemies : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         in_range = true;
-        Debug.Log(collision.tag);
+        //Debug.Log(collision.tag);
         Push(collision);
     }
 
