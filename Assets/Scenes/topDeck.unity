@@ -2736,8 +2736,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9037038165837384181, guid: 17b150ee2997fc34b99cb1006f166a05, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3088,6 +3087,8 @@ MonoBehaviour:
   - {fileID: 160842793}
   wavenum: 0
   enemiesLeft: 0
+  puddle: {fileID: 2582739574025287212, guid: d9232c777da352b4d8c9dcfdff009fc4, type: 3}
+  nextPuddle: 1.5
 --- !u!4 &2080988269
 Transform:
   m_ObjectHideFlags: 0

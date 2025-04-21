@@ -4,6 +4,8 @@ public class puddle : MonoBehaviour
 {
     public player player;
     public captain captain;
+    public enemy enemy;
+    public ranged_enemy ranged;
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<player>();
@@ -12,6 +14,10 @@ public class puddle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+       print(collision.gameObject.tag);
+
+
+
         if (collision.gameObject.tag != "wall")
         {
             if (collision.gameObject.tag == "Player")
@@ -22,11 +28,19 @@ public class puddle : MonoBehaviour
             {
                 //captain takes damage;
             }
-            else if (collision.gameObject.tag == null)
+            else if (collision.gameObject.tag == "Enemy")
             {
-                Destroy(gameObject);
+                enemy = collision.gameObject.GetComponent<enemy>();
+                enemy.Die();
             }
+            else if (collision.gameObject.tag == "Ranged_enemy")
+            {
+                ranged = GameObject.FindWithTag("Ranged_enemy").GetComponent<ranged_enemy>();
+                ranged.Die();
+            }
+
+
+            Destroy(this.gameObject);
         }
-        
     }
 }

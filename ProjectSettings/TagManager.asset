@@ -3,27 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Enemy
-  - Wall
-  - Ranged_enemy
-  - Projectile
-  - Destructible
-  - ws
-  - captain
-  - UI
-  - UI Tag
-  - UItag
-  - Arc
-  - thesquare
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - enemy
+  - 
   - Water
   - UI
-  - Pusher
+  - 
   - 
   - 
   - 
@@ -52,15 +40,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: gun
-    uniqueID: 2143471001
-    locked: 0
-  - name: boss
-    uniqueID: 646435059
-    locked: 0
-  - name: Sails
-    uniqueID: 2116289453
     locked: 0
   m_RenderingLayers:
   - Default

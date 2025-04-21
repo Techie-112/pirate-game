@@ -73,7 +73,7 @@ public class bullet : MonoBehaviour
     }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject != shooter || collision.gameObject.tag != "Wall")
+        if (collision.gameObject != shooter || collision.gameObject.tag != "Wall" || collision.gameObject.tag != "puddle")
         {
             if (collision.gameObject.tag == "Player")
             {

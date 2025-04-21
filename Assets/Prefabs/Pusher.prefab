@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  fRadius: 0.5
+  fRadius: 1.2
 --- !u!114 &560222594398375766
 MonoBehaviour:
   m_ObjectHideFlags: 0

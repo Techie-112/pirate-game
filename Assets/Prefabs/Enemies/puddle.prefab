@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8641675207537170764}
   - component: {fileID: 4909207202579907177}
-  - component: {fileID: 5967196452885432674}
   - component: {fileID: 2582739574025287212}
   - component: {fileID: -4992047134692882251}
   m_Layer: 0
   m_Name: puddle
-  m_TagString: Untagged
+  m_TagString: puddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,28 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5967196452885432674
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3595152020056229949}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a383006f678c8b8439424f7b02f8fa4a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2582739574025287212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1651c1f819b1346b07a52164ae3ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  captain: {fileID: 0}
+  enemy: {fileID: 0}
+  ranged: {fileID: 0}
 --- !u!61 &-4992047134692882251
 BoxCollider2D:
   m_ObjectHideFlags: 0

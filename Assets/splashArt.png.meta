@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0852b3337f8c1424eb180ac1952447d4
+guid: ddfcddc471808a946aafd7b4eae817dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3786843705224479569
-    second: blackball2_0
+      213: -7762556070875342141
+    second: splashArt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: blackball2_0
+      name: splashArt_0
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 1997
-        width: 142
-        height: 142
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: facbb22b6bd627bc0800000000000000
-      internalID: -3786843705224479569
+      spriteID: 3ca5c6e916cd54490800000000000000
+      internalID: -7762556070875342141
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      blackball2_0: -3786843705224479569
+      splashArt_0: -7762556070875342141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
