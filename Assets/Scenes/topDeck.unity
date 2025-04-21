@@ -487,7 +487,7 @@ MonoBehaviour:
   UI: {fileID: 0}
   pushHitbox: {fileID: 1532908703}
   pushDuration: 0.3
-  pushCooldown: 8
+  pushCooldown: 6
   pushIndicator: {fileID: 0}
 --- !u!4 &149531941
 Transform:
@@ -1663,7 +1663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1080460409
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2013,7 +2013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1039535730387530487, guid: 960fede1b7babf44db5c54972f0c4057, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7157079317420021979, guid: 960fede1b7babf44db5c54972f0c4057, type: 3}
       propertyPath: m_LocalPosition.x

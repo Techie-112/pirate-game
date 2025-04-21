@@ -487,7 +487,7 @@ MonoBehaviour:
   UI: {fileID: 0}
   pushHitbox: {fileID: 1713689720}
   pushDuration: 0.3
-  pushCooldown: 8
+  pushCooldown: 6
   pushIndicator: {fileID: 0}
 --- !u!4 &149531941
 Transform:
