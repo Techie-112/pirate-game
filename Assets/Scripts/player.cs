@@ -20,11 +20,13 @@ public class player : MonoBehaviour
     public float invincibilityDuration = 1f; // Time of invincibility after getting hit
     private bool isInvincible = false;
 
+    public UIscript UI;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cursprite = GetComponent<SpriteRenderer>();
+        UI = GameObject.FindGameObjectWithTag("UItag").GetComponent<UIscript>();
 
         currentLives = maxLives;
 
@@ -112,7 +114,7 @@ public class player : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died");
-        // Add game over logic eventually (like a restart menu)
+        UI.GameOver();
         Destroy(gameObject);
     }
 }

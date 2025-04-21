@@ -22,7 +22,7 @@ public class HealthDisplay : MonoBehaviour
         int livesLeft = player.currentLives;
         
         //basically takes the 6 lives and divides them up between the hearts
-        for (int i = 0; i < player.maxLives; i++)
+        for (int i = 0; i < hearts.Length; i++)
         {
             if (livesLeft >= 2)
             {
