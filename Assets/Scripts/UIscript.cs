@@ -7,6 +7,7 @@ public class UIscript : MonoBehaviour
     public static UIscript Instance; // Singleton instance
 
     public int score = 0;
+    public GameObject gameOverScreen;
     public Text scoreText;
 
     void Awake()
@@ -32,5 +33,14 @@ public class UIscript : MonoBehaviour
     void UpdateScoreText()
     {
         scoreText.text = score.ToString();
+    }
+    public void RestartLevel()
+    {
+        Debug.Log("restarting level");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
     }
 }

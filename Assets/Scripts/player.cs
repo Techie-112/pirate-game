@@ -14,18 +14,20 @@ public class player : MonoBehaviour
     [SerializeField] Sprite[] sprites;
     //0 = back 1 = right 2 = front 3 = left
 
-    public int maxLives; //= 6; // Total lives the player has
+    public int maxLives = 6; // Total lives the player has
     public int currentLives;
 
     public float invincibilityDuration = 1f; // Time of invincibility after getting hit
     private bool isInvincible = false;
 
+    public UIscript UI;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cursprite = GetComponent<SpriteRenderer>();
-        maxLives = 6;
+        UI = GameObject.FindGameObjectWithTag("UItag").GetComponent<UIscript>();
+
         currentLives = maxLives;
 
     }
@@ -112,7 +114,7 @@ public class player : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died");
-        // Add game over logic eventually (like a restart menu)
+        UI.GameOver();
         Destroy(gameObject);
     }
 }
